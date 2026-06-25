@@ -1,0 +1,254 @@
+.section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1800px; /* Based on Figma structural box width */
+  margin: 0 auto;
+  padding: 0 100px; /* Left/Right layout rules from design file */
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: rgba(16, 24, 40, 1);
+  margin-bottom: 18px;
+}
+
+.underline {
+  width: 96px; /* Matched to Figma dimensions 96px x 4px */
+  height: 4px;
+  background: linear-gradient(90deg, rgba(6, 37, 126, 1) 0%, rgba(189, 30, 30, 1) 100%);
+  margin: 0 auto 20px;
+}
+
+.subHeading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(74, 85, 101, 1);
+  margin-bottom: 72px;
+}
+
+/* --- Grid Structure --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px; /* Explicit gap spacing parameter assigned in layout specs */
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 40px; /* Radius configuration specified on properties panel */
+  overflow: hidden;
+  border: 1px solid rgba(239, 239, 239, 1);
+  /* Compound shadow layers rendered perfectly across desktop layouts */
+  box-shadow: 
+    0px 1.96px 4.4px 0px rgba(27, 29, 28, 0.14),
+    0px 8.31px 8.31px 0px rgba(27, 29, 28, 0.1),
+    0px 18.58px 11.25px 0px rgba(27, 29, 28, 0.05),
+    0px 32.76px 13.2px 0px rgba(27, 29, 28, 0.01);
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 408px; /* Box aspect metric extracted from layout layout dimensions */
+}
+
+.image {
+  object-fit: cover;
+  border-top-left-radius: 34px;
+  border-top-right-radius: 34px;
+}
+
+.cardBody {
+  padding: 40px;
+  min-height: 334px; /* Perfectly balances content variables to keep card grid consistent */
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+  margin-bottom: 24px;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+}
+
+.icon {
+  object-fit: contain;
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  color: rgba(16, 24, 40, 1);
+}
+
+.cardDescription {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%; /* Balanced line height for structural text readability */
+  color: rgba(74, 85, 101, 1);
+  margin-bottom: 32px;
+}
+
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Splits lists neatly inside 2 columns */
+  row-gap: 20px;
+  column-gap: 40px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: rgba(54, 65, 83, 1);
+}
+
+/* Custom CSS circular blue dots tracking design requirements */
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(6, 37, 126, 1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ctaWrap {
+  text-align: center;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px; 
+  height: 80px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(6, 37, 126, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 0;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow:
+    0px 8px 20px rgba(6, 37, 126, 0.25),
+    0px 4px 10px rgba(6, 37, 126, 0.18),
+    inset 0px 1px 1px rgba(255,255,255,0.15);
+}
+
+.ctaButton:hover {
+  background: #222222;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow:
+    0px 10px 24px rgba(0, 0, 0, 0.28),
+    0px 6px 12px rgba(0, 0, 0, 0.18),
+    inset 0px 1px 1px rgba(255,255,255,0.08);
+}
+
+/* Fluid responsive breakdown to single-column blocks on tablet/mobile */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+  .grid {
+    gap: 40px;
+  }
+  .cardTitle {
+    font-size: 28px;
+  }
+  .cardDescription {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .subHeading {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+  .container {
+    padding: 0 24px;
+  }
+  
+  /* Ek ke niche ek cards pure spacing ke sath (No slider, no dots) */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 0;
+  }
+  
+  .imageWrap {
+    height: 250px; /* Mobile responsive compact image height */
+  }
+  
+  .cardBody {
+    padding: 24px;
+    min-height: auto;
+  }
+  
+  .cardTitle {
+    font-size: 22px;
+  }
+  
+  .cardDescription {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  
+  /* Blue dots features display beautifully as single item rows on mobile */
+  .featureList {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+  
+  .featureItem {
+    font-size: 16px;
+  }
+  
+  .ctaButton {
+    width: 220px;
+    height: 64px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

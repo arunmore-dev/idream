@@ -1,0 +1,200 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bgMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* Subtle dark overlay to mimic screenshot legibility */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0;                          /* remove auto centering */
+  padding: 220px 24px 80px 153px;     /* big top, left-aligned */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: 0px;
+  max-width: 810px;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  font-family: 'Inter', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: 0px;  
+}
+
+.subtext {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  max-width: 754px;
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 20px 36px;
+  min-height: 79px;
+
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  background: rgba(26, 26, 26, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #fff;
+  text-decoration: none;
+  
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+
+  box-shadow:
+    inset 0 0 0px rgba(242, 242, 242, 0.5),
+    inset 0 0 0 0px rgba(153, 153, 153, 1),
+    inset -2px -2px 0px rgba(179, 179, 179, 1),
+    inset 2px 2px 0px rgba(179, 179, 179, 1),
+    inset 3px 3px 0px rgba(255, 255, 255, 0.5);
+
+  transition: all 0.3s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.arrowIcon {
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   ADDED RESPONSIVE BREAKPOINTS (NO DESIGN OR PROPERTY CHANGES)
+   ========================================================================== */
+
+/* Laptop & Small Desktop Optimization */
+@media (max-width: 1200px) {
+  .content {
+    padding-left: 60px; 
+  }
+}
+
+/* Tablet Layout Landscape & Portrait */
+@media (max-width: 1024px) {
+  .content {
+    padding-left: 40px;
+  }
+  
+  .heading,
+  .highlight {
+    font-size: 56px;
+  }
+
+  .subtext {
+    font-size: 20px;
+  }
+}
+
+/* Matches your uploaded screenshot layout perfectly */
+@media (max-width: 768px) {
+  .content {
+    padding: 140px 20px 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 36px; /* Scaled cleanly down for mobile view */
+    line-height: 1.3;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    font-size: inherit; 
+    line-height: inherit;
+  }
+
+  .subtext {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .btnOutline {
+    width: 100%;
+    max-width: 340px; /* Limits width to avoid overly stretched buttons on tablets */
+    min-height: 60px;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08); /* Transparent frosted look from screenshot */
+  }
+}
+
+/* Extra Small Screen Optimization (Phones under 400px wide) */
+@media (max-width: 400px) {
+  .content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .heading {
+    font-size: 32px;
+  }
+}

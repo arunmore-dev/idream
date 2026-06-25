@@ -1,0 +1,596 @@
+.section {
+  padding: 80px 0;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1645px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Header Text formatting (Fixed dynamic pixel caps removed for wrap flow fixes) */
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.subTitleText {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  color: rgba(74, 85, 101, 1);
+  margin-bottom: 12px;
+}
+
+.mainTitleText {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0 0 20px 0;
+}
+
+.gradientLineTracker {
+  width: 96px;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(6, 37, 126, 1) 0%, rgba(189, 30, 30, 1) 100%);
+  margin-bottom: 24px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.descriptionText {
+  max-width: 655px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(74, 85, 101, 1);
+  margin: 0;
+}
+
+/* Tab container controls */
+.tabBarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.tabGrid {
+  width: 784px;
+  height: 52px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(236, 236, 240, 1);
+  border-radius: 16px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.tabItemButton {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(10, 10, 10, 0.6);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabActive {
+  background: #ffffff !important;
+  color: rgba(10, 10, 10, 1) !important;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide Mobile layout trigger box by default */
+.mobileDropdownContainer {
+  display: none;
+}
+.mobileCardsSlider {
+  display: none;
+}
+
+/* Content wrapper styling */
+.contentBodyWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.cardsLayoutGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+}
+
+.metricCard {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 204px;
+  text-align: left;
+}
+
+.cardExchangeLabel {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(106, 114, 130, 1);
+  margin-bottom: 24px;
+}
+
+.cardBseHeading {
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 48px;
+  color: rgba(16, 24, 40, 1);
+  margin-bottom: 16px;
+}
+
+.cardBombaySubtext {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(106, 114, 130, 1);
+  margin-top: auto;
+}
+
+/* Bottom Highlight Section styling configs */
+.whyInvestBlock {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.whyInvestTitle {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+
+.highlightsGridDisplay {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 48px;
+  row-gap: 32px;
+  width: 100%;
+}
+
+.highlightRowItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.checkboxContainerSquare {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(224, 235, 255, 1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlightTextDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.highlightHeadingTitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0;
+}
+
+.highlightParagraphDesc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(74, 85, 101, 1);
+  margin: 0;
+}
+
+/* ==========================================
+    FINANCIAL + GOVERNANCE SUB MODULES
+========================================== */
+.documentSection {
+  width: 100%;
+  background: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.documentTitle {
+  margin: 0 0 34px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #101828;
+  text-align: left;
+}
+
+.documentRow {
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 14px;
+  background: #F8F9FA;
+  border: 1px solid rgba(0, 0, 0, .06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.documentRow:last-child {
+  margin-bottom: 0;
+}
+
+.documentRow:hover {
+  background: #F1F3F5;
+  border-color: rgba(0,0,0,.12);
+}
+
+.documentRow span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+    NEWS SECTION LAYOUT MODULE
+========================================== */
+.newsSection {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newsHeading {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #000;
+  margin-bottom: 32px;
+}
+
+.newsCard {
+  border-left: 6px solid rgba(43, 117, 255, 1);
+  padding: 4px 0 4px 24px;
+  margin-bottom: 32px;
+}
+
+.newsDate {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #6A7282;
+}
+
+.newsTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #101828;
+}
+
+.newsDescription {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4A5565;
+  max-width: 800px;
+}
+
+.allAnnouncementsBtn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff0000 0%, #106efa 100%);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.allAnnouncementsBtn:hover {
+  opacity: 0.95;
+}
+
+/* ==========================================
+    RESPONSIVE MEDIA handling MEDIA BREAKPOINTS
+========================================== */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 32px;
+  }
+  .highlightsGridDisplay {
+    column-gap: 32px;
+  }
+  .cardsLayoutGrid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cardsLayoutGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .highlightsGridDisplay {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+}
+
+/* Mobile Layout execution configurations completely matching mockups */
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+  .container {
+    padding: 0 20px;
+  }
+
+  .mainTitleText {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .subTitleText {
+    font-size: 16px;
+  }
+  .descriptionText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* Swapping desktop tab rows for image_bef41b.png Dropdown triggers */
+  .tabBarContainer {
+    display: none;
+  }
+
+  .mobileDropdownContainer {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 32px;
+    z-index: 50;
+  }
+
+  .dropdownSelectorTrigger {
+    width: 100%;
+    height: 48px;
+    background: #2b75ff; /* Sleek high visibility interactive primary accent blue tint */
+    border: none;
+    border-radius: 24px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(43, 117, 255, 0.3);
+  }
+
+  .dropdownSelectorTrigger span {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .dropdownArrowIcon {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  .arrowRotate {
+    transform: rotate(180deg);
+  }
+
+  .dropdownFloatingMenu {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    padding: 6px;
+    box-sizing: border-box;
+  }
+
+  .dropdownOptionRow {
+    width: 100%;
+    height: 44px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 0 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4A5565;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .optionActive {
+    background: rgba(224, 235, 255, 0.6);
+    color: #2b75ff;
+    font-weight: 600;
+  }
+
+  /* Layout conversions for primary overview metrics rows */
+  .cardsLayoutGrid {
+    display: none;
+  }
+
+  .mobileCardsSlider {
+    display: block;
+    width: 100%;
+  }
+
+  .sliderClip {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sliderTrack {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .sliderSlide {
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+
+  .metricCard {
+    padding: 28px 24px;
+    min-height: auto;
+  }
+
+  .cardBseHeading {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  /* Dots Control System codes matching sliders models */
+  .dotsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #E2E8F0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .activeDot {
+    background-color: #2b75ff;
+    transform: scale(1.1);
+  }
+
+  /* Feature highlight panels updates */
+  .whyInvestBlock {
+    padding: 24px;
+  }
+
+  .whyInvestTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+
+  /* Sections data elements adjustments */
+  .documentSection {
+    padding: 24px 16px;
+  }
+  .documentTitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+  .documentRow {
+    height: 52px;
+    padding: 0 14px;
+  }
+  .documentRow span {
+    font-size: 15px;
+  }
+
+  .newsSection {
+    padding: 24px;
+  }
+  .newsHeading {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+  .newsCard {
+    padding-left: 16px;
+    margin-bottom: 24px;
+  }
+  .newsTitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .newsDescription {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

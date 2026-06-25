@@ -1,0 +1,355 @@
+/* ─── Section Layout ──────────────────────────────────── */
+.section {
+  padding: 100px 0;
+  background: #ffffff;
+  overflow: hidden; /* Prevents slide overflow from causing browser scrollbars */
+}
+
+.container {
+  width: 100%;
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: 0 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  box-sizing: border-box;
+}
+
+/* ─── Intro Layout ────────────────────────────────────── */
+.intro {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.introLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #466BFF 0%, #F63333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heading {
+  max-width: 654px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #101828;
+  margin: 0;
+}
+
+.description {
+  max-width: 764px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0;
+}
+  
+/* ─── Desktop Grid System ────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Text Cards ──────────────────────────────────────── */
+.textCard {
+  background: #F8F6F4; 
+  border-radius: 24px;
+  padding: 40px 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  box-sizing: border-box;
+}
+
+.cardLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #6A7282;
+}
+
+.cardText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: #101828;
+  margin: 0;
+}
+
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.arrowBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 1px solid rgba(209, 213, 220, 1);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.arrowBtn:hover {
+  background: rgba(248, 246, 244, 1);
+}
+
+/* ─── Image Wrappers ──────────────────────────────────── */
+.standaloneImageWrap {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+/* ─── Center Card & Figma Overlay ─────────── */
+.cardCenter {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 504px; 
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+  height: 144px;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 37, 126, 1) 0%,
+    rgba(189, 30, 30, 0.26) 100%
+  );
+  z-index: 2;
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overlayLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.overlayText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.overlayArrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+/* ─── Mobile Slider Engine Layout (Hidden on Desktop) ─── */
+.carouselViewport {
+  display: none;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.slideItem {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paginationDots {
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #F8D3D3;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dotActive {
+  background-color: #D32F2F;
+}
+
+/* ─── Responsive Media Queries ─────────────────────────── */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 32px;
+    gap: 48px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .heading {
+    font-size: 40px;
+  }
+  .description {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 24px;
+    gap: 40px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Removes hardcoded widths completely to prevent text overflow */
+  .heading {
+    font-size: 28px;
+    line-height: 1.3;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Hide static grid, show slide viewport instead */
+  .grid {
+    display: none;
+  }
+
+  .carouselViewport {
+    display: block;
+  }
+
+  .paginationDots {
+    display: flex;
+  }
+
+  /* Scale mobile slide dimensions cleanly */
+  .textCard {
+    padding: 32px 24px;
+    min-height: 220px;
+  }
+
+  .cardText {
+    font-size: 22px;
+  }
+
+  .cardCenter {
+    height: 360px;
+  }
+
+  .cardOverlay {
+    padding: 20px;
+    height: auto;
+  }
+
+  .standaloneImageWrap {
+    height: 220px;
+  }
+}

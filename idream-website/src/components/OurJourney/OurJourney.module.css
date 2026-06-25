@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.section {
+  width: 100%;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1655px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* --- Top Journey Wrapper --- */
+.topJourneyWrapper {
+  background-color: rgba(242, 248, 255, 1);
+  border-radius: 24px;
+  padding: 48px;
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(189, 30, 30, 1);
+  margin-top: 0;
+  margin-bottom: 53px;
+}
+
+.timelineContainer {
+  width: 100%;
+}
+
+.timelineRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timelineNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 260px;
+  flex: none;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(219, 231, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.iconImage {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.year {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(6, 37, 126, 1);
+  margin-bottom: 8px;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(54, 65, 83, 1);
+}
+
+/* Pagination Dots */
+.paginationDots {
+  display: none;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #F8D3D3;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dotActive {
+  background-color: #BD1E1E;
+}
+
+/* --- Cards Styling Section --- */
+.cardsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-radius: 14px;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.borderBlue {
+  border-top: 1px solid rgba(6, 37, 126, 0.7);
+  border-right: 1px solid rgba(6, 37, 126, 0.7);
+  border-bottom: 1px solid rgba(6, 37, 126, 0.7);
+  border-left: 4px solid rgba(6, 37, 126, 1);
+}
+
+.borderRed {
+  border-top: 1px solid rgba(189, 30, 30, 0.7);
+  border-right: 1px solid rgba(189, 30, 30, 0.7);
+  border-bottom: 1px solid rgba(189, 30, 30, 0.7);
+  border-left: 4px solid rgba(189, 30, 30, 1);
+}
+
+.borderDarkBlue {
+  border-top: 1px solid rgba(6, 37, 126, 0.7);
+  border-right: 1px solid rgba(6, 37, 126, 0.7);
+  border-bottom: 1px solid rgba(6, 37, 126, 0.7);
+  border-left: 4px solid rgba(6, 37, 126, 1);
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0;
+}
+
+.cardText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: rgba(74, 85, 101, 1);
+  margin: 0;
+}
+
+/* ─── ONLY MOBILE/TABLET RESPONSIVE RULES ─── */
+@media (max-width: 991px) {
+  .topJourneyWrapper {
+    padding: 40px 20px;
+  }
+
+  .timelineContainer {
+    overflow: hidden;
+  }
+
+  .timelineRow {
+    justify-content: flex-start;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .timelineNode {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .paginationDots {
+    display: flex;
+  }
+
+  /* Target structure setup for image_8c28c3.png mockup */
+  .cardsRow {
+    display: block;
+    position: relative;
+    height: 340px; 
+    margin: 20px auto 40px auto;
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+  }
+}

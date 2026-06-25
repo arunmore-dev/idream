@@ -1,0 +1,138 @@
+.investorContactOuterSection {
+  width: 100%;
+  padding: 60px 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.investorContactMainBox {
+  width: 1600px; /* Strict match with Figma width constraint specs */
+  max-width: 95%;
+  min-height: 265px;
+  background: linear-gradient(90deg, #BD1E1E 0%, #06257E 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  padding: 42px 30px; /* Added internal top/bottom cushion space */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.investorContactHeading {
+  width: 1468px;
+  max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0 0 16px 0; /* Clear baseline gap beneath heading */
+}
+
+.investorContactSubDescription {
+  width: 834px;
+  max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(243, 232, 255, 1); /* Exact background font rgba color profile specified */
+  margin: 0 0 32px 0; /* Clean separation gap before action button sequence */
+}
+
+.actionButtonGroup {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Button Configurations */
+.emailRelationsButtonBox {
+  width: 183.234375px; /* Exact programmatic button sizing specs */
+  height: 36px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap; /* Prevents text from breaking or stacking vertically */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.downloadKitButtonBox {
+  width: 183.234375px; /* Matched symmetrically with the custom email box configuration layout */
+  height: 36px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.emailRelationsButtonBox:hover,
+.downloadKitButtonBox:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.emailTextContent {
+  width: 159px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(6, 37, 126, 1); /* Core dark blue color matching figma specifications */
+  display: inline-block;
+}
+
+.downloadTextContent {
+  width: 159px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: rgba(6, 37, 126, 1); /* Dark wine red tone to complement the dual gradient design track cleanly */
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .investorContactMainBox {
+    padding: 32px 16px;
+  }
+  .investorContactHeading {
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+  .investorContactSubDescription {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+  .emailRelationsButtonBox,
+  .downloadKitButtonBox {
+    width: auto; /* Dynamic scaling to retain link alignment settings seamlessly on mobile viewports */
+  }
+}

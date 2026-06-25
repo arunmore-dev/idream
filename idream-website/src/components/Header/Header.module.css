@@ -1,0 +1,203 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 101px; 
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1670px; 
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  margin-right: 32px; 
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 32px; 
+}
+
+.navLink {
+  color: #364153; 
+  font-family: 'Inter', sans-serif; 
+  font-size: 16px; 
+  font-weight: 400; 
+  line-height: 24px; 
+  letter-spacing: 0px; 
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.navLink:hover {
+  color: #06257E; 
+}
+
+.ctaButton {
+  background: linear-gradient(90deg, #06257E 0%, #BD1E1E 100%);
+  color: #ffffff;
+  height: 36px;
+  width: 122.56px;
+  border-radius: 8px; 
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: opacity 0.2s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.9;
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #3b5998, #bd1e1e); /* Gives a stylized button background similar to the screenshot wrapper layout */
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menuToggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff; /* White bars to pop against the blue/red toggle button */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menuToggle.menuOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuToggle.menuOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.menuOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileCtaWrapper {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA INJECTIONS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .navList {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 75px;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .container > .ctaButton {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 100px 32px 32px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    margin-right: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px; 
+  }
+
+  .nav.navOpen {
+    right: 0;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  .navLink {
+    width: 100%;
+    display: block;
+  }
+
+  .mobileCtaWrapper {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 16px;
+  }
+  .nav {
+    width: 240px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

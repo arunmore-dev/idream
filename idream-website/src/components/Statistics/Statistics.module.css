@@ -1,0 +1,89 @@
+.section {
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 48px 0;
+}
+
+.container {
+  width: 1528px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 48px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.statWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  color: rgba(6, 37, 126, 1); /* Deep contrast slate blue */
+  margin-bottom: 12px;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: rgba(153, 161, 175, 1);
+}
+
+/* Subtle clean dividing line markers present in screenshot data */
+.divider {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(153, 161, 175, 0.2);
+}
+
+/* Responsive Structural Breakdowns to match image_be2202.png stack */
+@media (max-width: 900px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    width: 100%;
+  }
+  .statWrapper {
+    width: 100%;
+    justify-content: center;
+  }
+  .divider {
+    display: none; /* Hide desktop row rules cleanly */
+  }
+  .value {
+    font-size: 44px;
+    line-height: 1;
+    color: #2b6eff; /* Premium highlight blue specified inside reference mobile files */
+  }
+  .label {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+}

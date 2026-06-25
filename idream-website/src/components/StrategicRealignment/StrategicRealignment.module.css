@@ -1,0 +1,348 @@
+.section {
+  padding: 80px 0;
+  background: #ffffff;
+  width: 100%;
+  overflow-x: hidden; /* Safeguards mobile horizontal scroll leakage */
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 100px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Header Section styling */
+.headerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.mainHeading {
+  width: 100%;
+  max-width: 627px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0 0 16px 0;
+}
+
+.gradientLine {
+  width: 96px;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(16, 110, 250, 1) 0%, rgba(230, 0, 0, 1) 100%);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.subHeading {
+  width: 100%;
+  max-width: 627px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: rgba(74, 85, 101, 1);
+  margin: 0;
+}
+
+/* Layout Grid Split for Desktop View */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 673px) minmax(0, 677px);
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+  justify-content: space-between;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left Column content specs */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 0; /* Prevents cell layout popping layout limits */
+}
+
+.heading {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #101828;
+  margin: 0 0 24px;
+  white-space: normal; /* Absolute core wrapper safe fix */
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29.25px;
+  color: rgba(74, 85, 101, 1);
+  margin: 0;
+}
+
+.quoteBox {
+  width: 100%;
+  max-width: 673px;
+  min-height: 145px;
+  background: #FAF5FF;
+  border-left: 4px solid #06257E;
+  padding: 24px 24px 24px 40px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.quoteBox p {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(54, 65, 83, 1);
+  margin: 0;
+}
+
+/* Right Side List Container */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
+}
+
+.desktopList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Base card item style sheet rules layout */
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 136px;
+  padding: 24px;
+  gap: 16px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.itemBlue {
+  background: linear-gradient(135deg, rgba(250,245,255,1) 0%, rgba(255,255,255,1) 100%);
+  border: 2.7px solid rgba(119,167,255,0.75);
+  box-shadow: 0 0 0 1px rgba(119,167,255,0.10);
+}
+
+.itemPink {
+  background: linear-gradient(135deg, rgba(253,242,248,1) 0%, rgba(255,255,255,1) 100%);
+  border: 2.7px solid rgba(252,206,206,0.75);
+  box-shadow: 0 0 0 1px rgba(252,206,206,0.10);
+}
+
+.itemIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(177,204,255,1);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgba(16, 24, 40, 1);
+  margin: 0;
+}
+
+.itemText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* Hide Mobile Slider by Default on Desktop View */
+.mobileSliderWrapper {
+  display: none;
+}
+
+/* Tablet Media Handling Breakpoint */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Mobile Media Handling Breakpoint Fixes for image_be92e2.png */
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+  .container {
+    padding: 0 24px;
+  }
+  
+  /* Reset dynamic maximum sizes to safely contain texts internally */
+  .mainHeading {
+    font-size: 32px;
+    line-height: 40px;
+    max-width: 100%;
+  }
+  .subHeading {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+  }
+  .headerBlock {
+    margin-bottom: 40px;
+  }
+  
+  .heading {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: left;
+    white-space: normal; /* Forces absolute word-wrapping */
+  }
+  .text {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .quoteBox {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+  .quoteBox p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  /* Slider configuration activation below 768px */
+  .desktopList {
+    display: none;
+  }
+
+  .mobileSliderWrapper {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .sliderClip {
+    width: 100%;
+    overflow: hidden; /* Hides hidden side active items correctly */
+  }
+
+  .sliderTrack {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .sliderSlide {
+    min-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+
+  .item {
+    min-height: auto;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .itemTitle {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .itemText {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Slider dots container matching design template */
+  .dotsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fcd4d4;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .activeDot {
+    background-color: #c91818;
+    transform: scale(1.1);
+  }
+}
