@@ -37,7 +37,7 @@ export default function Hero() {
           <Link href="#investors" className={styles.btnOutline}>
             Investor Relation
             <Image
-              src="/images/Arrow.PNG"
+              src="/images/Arrow.png"
               alt=""
               width={18}
               height={18}
