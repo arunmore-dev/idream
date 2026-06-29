@@ -83,14 +83,12 @@ const newsItems = [
 export default function InvestorRelations() {
   const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("Overview");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [cardIndex, setCardIndex] = useState(0);
   
   const content = tabContent[activeTab];
 
   const handleTabSelect = (tab: (typeof tabs)[number]) => {
     setActiveTab(tab);
     setDropdownOpen(false);
-    setCardIndex(0); // Reset index mapping
   };
 
   return (
@@ -122,7 +120,7 @@ export default function InvestorRelations() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Layout matching image_bef41b.png completely */}
+        {/* Mobile Dropdown Layout */}
         <div className={styles.mobileDropdownContainer}>
           <button 
             className={styles.dropdownSelectorTrigger}
@@ -168,34 +166,18 @@ export default function InvestorRelations() {
                 ))}
               </div>
 
-              {/* Mobile Swipeable Metrics Component rendering */}
+              {/* Mobile Native Swipeable Metrics View */}
               <div className={styles.mobileCardsSlider}>
                 <div className={styles.sliderClip}>
-                  <div 
-                    className={styles.sliderTrack}
-                    style={{ transform: `translateX(-${cardIndex * 100}%)` }}
-                  >
+                  <div className={styles.sliderTrack}>
                     {content.cards.map((card, idx) => (
-                      <div key={`slide-${idx}`} className={styles.sliderSlide}>
-                        <div className={styles.metricCard}>
-                          <span className={styles.cardExchangeLabel}>{card.label}</span>
-                          <span className={styles.cardBseHeading}>{card.mainValue}</span>
-                          <span className={styles.cardBombaySubtext}>{card.subValue}</span>
-                        </div>
+                      <div key={`slide-${idx}`} className={styles.metricCard}>
+                        <span className={styles.cardExchangeLabel}>{card.label}</span>
+                        <span className={styles.cardBseHeading}>{card.mainValue}</span>
+                        <span className={styles.cardBombaySubtext}>{card.subValue}</span>
                       </div>
                     ))}
                   </div>
-                </div>
-
-                <div className={styles.dotsContainer}>
-                  {content.cards.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCardIndex(index)}
-                      className={`${styles.dot} ${cardIndex === index ? styles.activeDot : ""}`}
-                      aria-label={`Go to metric card slide ${index + 1}`}
-                    />
-                  ))}
                 </div>
               </div>
 

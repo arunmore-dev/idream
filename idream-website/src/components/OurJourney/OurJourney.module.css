@@ -34,7 +34,7 @@
   margin-bottom: 53px;
 }
 
-.timelineContainer {
+.timelineViewportMobile {
   width: 100%;
 }
 
@@ -93,30 +93,11 @@
   color: rgba(54, 65, 83, 1);
 }
 
-/* Pagination Dots */
-.paginationDots {
-  display: none;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #F8D3D3;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dotActive {
-  background-color: #BD1E1E;
-}
-
 /* --- Cards Styling Section --- */
+.cardsRowViewport {
+  width: 100%;
+}
+
 .cardsRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -128,10 +109,10 @@
   background: rgba(255, 255, 255, 1);
   box-sizing: border-box;
   border-radius: 14px;
-  padding: 16px 24px 16px 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .borderBlue {
@@ -175,46 +156,85 @@
   margin: 0;
 }
 
-/* ─── ONLY MOBILE/TABLET RESPONSIVE RULES ─── */
+/* ─── ONLY MOBILE/TABLET RESPONSIVE SWIPING RULES ─── */
 @media (max-width: 991px) {
-  .topJourneyWrapper {
-    padding: 40px 20px;
+  .container {
+    padding: 0 16px;
   }
 
-  .timelineContainer {
-    overflow: hidden;
+  .topJourneyWrapper {
+    padding: 32px 16px;
+    margin-bottom: 24px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  /* Timeline Viewport Update */
+  .timelineViewportMobile {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scroll-padding: 0 16px;
+  }
+
+  .timelineViewportMobile::-webkit-scrollbar {
+    display: none;
   }
 
   .timelineRow {
     justify-content: flex-start;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .timelineNode {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .paginationDots {
+    gap: 16px; /* Timeline items ke beech gap */
+    width: max-content;
     display: flex;
   }
 
-  /* Target structure setup for image_8c28c3.png mockup */
-  .cardsRow {
-    display: block;
-    position: relative;
-    height: 340px; 
-    margin: 20px auto 40px auto;
-    max-width: 450px;
+  .timelineNode {
+    flex: 0 0 calc(100vw - 48px); /* Container padding adjusted width */
+    width: calc(100vw - 48px);
+    scroll-snap-align: start;
+    box-sizing: border-box;
+  }
+
+  /* --- Fix Joint Sliders Effect --- */
+  .cardsRowViewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
+    /* Snapping point padding taaki boundary clean alignment me rahe */
+    scroll-padding: 0 4px; 
+  }
+
+  .cardsRowViewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cardsRow {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Yeh 20px ka gap dono cards ko aapas me chipakne (joint) nahi dega */
+    width: max-content;
+    padding: 4px;
   }
 
   .card {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+    /* calc(100vw - container padding left/right - inner track gap offset) */
+    flex: 0 0 calc(100vw - 40px); 
+    width: calc(100vw - 40px);
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 220px;
+    height: auto;
+    padding: 24px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
   }
 }

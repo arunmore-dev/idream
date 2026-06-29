@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import styles from "./Pioneering.module.css";
 
 export default function Pioneering() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
@@ -103,12 +100,9 @@ export default function Pioneering() {
           </div>
         </div>
 
-        {/* 2. MOBILE & TABLET SLIDER VIEW: Moves one-by-one */}
+        {/* 2. MOBILE & TABLET SWIPABLE VIEW */}
         <div className={styles.carouselViewport}>
-          <div 
-            className={styles.carouselTrack}
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
+          <div className={styles.carouselTrack}>
             {/* SLIDE 1: Who We Are */}
             <div className={styles.slideItem}>
               <div className={styles.textCard}>
@@ -132,26 +126,28 @@ export default function Pioneering() {
 
             {/* SLIDE 2: Recognition */}
             <div className={styles.slideItem}>
-              <div className={styles.cardCenter}>
-                <Image
-                  src="/images/about-filmset.jpg"
-                  alt="Film production set"
-                  fill
-                  className={styles.cardImage}
-                  sizes="100vw"
-                />
-                <div className={styles.cardOverlay}>
-                  <div className={styles.overlayContent}>
-                    <span className={styles.overlayLabel}>Recognition</span>
-                    <p className={styles.overlayText}>
-                      IDream Recognized as Industry Pioneer
-                    </p>
+              <div className={styles.cardCenterMobileWrapper}>
+                <div className={styles.cardCenter}>
+                  <Image
+                    src="/images/about-filmset.jpg"
+                    alt="Film production set"
+                    fill
+                    className={styles.cardImage}
+                    sizes="100vw"
+                  />
+                  <div className={styles.cardOverlay}>
+                    <div className={styles.overlayContent}>
+                      <span className={styles.overlayLabel}>Recognition</span>
+                      <p className={styles.overlayText}>
+                        IDream Recognized as Industry Pioneer
+                      </p>
+                    </div>
+                    <button className={styles.overlayArrow} aria-label="Read more">
+                      <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#06257E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
                   </div>
-                  <button className={styles.overlayArrow} aria-label="Read more">
-                    <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#06257E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -181,18 +177,6 @@ export default function Pioneering() {
                 />
               </div>
             </div>
-          </div>
-
-          {/* Interactive Navigation Control Dots */}
-          <div className={styles.paginationDots}>
-            {[0, 1, 2].map((index) => (
-              <button
-                key={index}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`${styles.dot} ${activeIndex === index ? styles.dotActive : ""}`}
-                onClick={() => setActiveIndex(index)}
-              />
-            ))}
           </div>
         </div>
 

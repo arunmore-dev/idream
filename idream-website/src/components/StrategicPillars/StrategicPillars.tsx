@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./StrategicPillars.module.css";
 
 const pillars = [
@@ -22,8 +21,6 @@ const pillars = [
 ];
 
 export default function StrategicPillars() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.heading}>Strategic Pillars</h2>
@@ -41,39 +38,20 @@ export default function StrategicPillars() {
         ))}
       </div>
 
-      {/* Mobile & Tablet Slider Layout (Visible below 768px) */}
+      {/* Mobile Native Swiper View (No Joint Cards / Zero Border Clipping) */}
       <div className={styles.mobileSliderWrapper}>
         <div className={styles.sliderClip}>
-          <div 
-            className={styles.sliderTrack}
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
+          <div className={styles.sliderTrack}>
             {pillars.map((pillar) => (
-              <div key={`mobile-${pillar.title}`} className={styles.sliderSlide}>
-                <div className={styles.card}>
-                  <div className={styles.iconWrap}>
-                    <img src={pillar.icon} alt={pillar.title} className={styles.icon} />
-                  </div>
-                  <h3 className={styles.cardTitle}>{pillar.title}</h3>
-                  <p className={styles.cardText}>{pillar.description}</p>
+              <div key={`mobile-${pillar.title}`} className={styles.card}>
+                <div className={styles.iconWrap}>
+                  <img src={pillar.icon} alt={pillar.title} className={styles.icon} />
                 </div>
+                <h3 className={styles.cardTitle}>{pillar.title}</h3>
+                <p className={styles.cardText}>{pillar.description}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Dynamic Dots Navigation for swapping slides */}
-        <div className={styles.dotsContainer}>
-          {pillars.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`${styles.dot} ${
-                activeIndex === index ? styles.activeDot : ""
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </div>

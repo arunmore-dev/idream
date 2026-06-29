@@ -73,7 +73,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-width: 0; /* Prevents cell layout popping layout limits */
+  min-width: 0;
 }
 
 .heading {
@@ -84,7 +84,7 @@
   line-height: 48px;
   color: #101828;
   margin: 0 0 24px;
-  white-space: normal; /* Absolute core wrapper safe fix */
+  white-space: normal;
 }
 
 .textGroup {
@@ -228,7 +228,7 @@
   }
 }
 
-/* Mobile Media Handling Breakpoint Fixes for image_be92e2.png */
+/* Mobile Media Handling Breakpoint Fixes */
 @media (max-width: 768px) {
   .section {
     padding: 48px 0;
@@ -237,7 +237,6 @@
     padding: 0 24px;
   }
   
-  /* Reset dynamic maximum sizes to safely contain texts internally */
   .mainHeading {
     font-size: 32px;
     line-height: 40px;
@@ -256,7 +255,7 @@
     font-size: 28px;
     line-height: 36px;
     text-align: left;
-    white-space: normal; /* Forces absolute word-wrapping */
+    white-space: normal;
   }
   .text {
     font-size: 16px;
@@ -275,7 +274,6 @@
     line-height: 22px;
   }
 
-  /* Slider configuration activation below 768px */
   .desktopList {
     display: none;
   }
@@ -286,28 +284,42 @@
     margin-top: 24px;
   }
 
+  /* FIX: Added safe inline padding inside viewport container */
   .sliderClip {
     width: 100%;
-    overflow: hidden; /* Hides hidden side active items correctly */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Yeh padding left aur right side ki cut hone wali borders ko protect karegi */
+    padding: 4px 16px; 
+    box-sizing: border-box;
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+  }
+
+  .sliderClip::-webkit-scrollbar {
+    display: none;
   }
 
   .sliderTrack {
     display: flex;
-    width: 100%;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    flex-direction: row;
+    gap: 16px; /* Perfect spacing to separate the cards */
+    width: max-content;
   }
 
-  .sliderSlide {
-    min-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 4px;
-  }
-
+  /* FIX: Perfectly calculated width using viewport offset to avoid right border clipping */
   .item {
-    min-height: auto;
-    padding: 20px;
-    width: 100%;
+    /* 100vw minus left/right margins and gap ratios prevents clipping beautifully */
+    flex: 0 0 calc(100vw - 48px); 
+    width: calc(100vw - 48px);
+    scroll-snap-align: center; /* Center snapping gives smooth safe margins on both ends */
+    box-sizing: border-box;
+    min-height: 150px;
+    height: auto;
+    padding: 24px 20px;
   }
 
   .itemTitle {
@@ -318,31 +330,5 @@
   .itemText {
     font-size: 14px;
     line-height: 20px;
-  }
-
-  /* Slider dots container matching design template */
-  .dotsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 24px;
-    width: 100%;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fcd4d4;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .activeDot {
-    background-color: #c91818;
-    transform: scale(1.1);
   }
 }

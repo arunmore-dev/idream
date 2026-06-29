@@ -2,7 +2,7 @@
 .section {
   padding: 100px 0;
   background: #ffffff;
-  overflow: hidden; /* Prevents slide overflow from causing browser scrollbars */
+  overflow: hidden;
 }
 
 .container {
@@ -227,12 +227,10 @@
 .carouselViewport {
   display: none;
   width: 100%;
-  overflow: hidden;
 }
 
 .carouselTrack {
   display: flex;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   width: 100%;
 }
 
@@ -245,26 +243,8 @@
   gap: 20px;
 }
 
-.paginationDots {
-  display: none;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #F8D3D3;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dotActive {
-  background-color: #D32F2F;
+.cardCenterMobileWrapper {
+  width: 100%;
 }
 
 /* ─── Responsive Media Queries ─────────────────────────── */
@@ -302,7 +282,6 @@
     text-align: center;
   }
 
-  /* Removes hardcoded widths completely to prevent text overflow */
   .heading {
     font-size: 28px;
     line-height: 1.3;
@@ -317,39 +296,67 @@
     text-align: center;
   }
 
-  /* Hide static grid, show slide viewport instead */
+  /* Desktop grid hides */
   .grid {
     display: none;
   }
 
+  /* 1. Exact 100% viewport view layout setup to fix 2nd image peek issue */
   .carouselViewport {
     display: block;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
-  .paginationDots {
+  .carouselViewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carouselTrack {
     display: flex;
+    gap: 0px; /* Zero gap between slides ensures exact 100% container alignment */
   }
 
-  /* Scale mobile slide dimensions cleanly */
+  /* Full screen view per card slide */
+  .slideItem {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0 4px; /* Slight inside breathing space */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scroll-snap-align: start;
+  }
+
+  /* 2. Parallel Height Balancing logic */
   .textCard {
     padding: 32px 24px;
+    height: 220px; /* Locked explicit height for symmetry */
     min-height: 220px;
+  }
+
+  .standaloneImageWrap {
+    height: 240px; /* Total combined track height = 220 + 20 gap + 240 = 480px */
+  }
+
+  .cardCenterMobileWrapper {
+    height: 480px; /* Match height perfectly to card 1 & card 3 */
+  }
+
+  .cardCenter {
+    height: 100%; /* Spans full 480px layout height perfectly */
   }
 
   .cardText {
     font-size: 22px;
   }
 
-  .cardCenter {
-    height: 360px;
-  }
-
   .cardOverlay {
     padding: 20px;
     height: auto;
-  }
-
-  .standaloneImageWrap {
-    height: 220px;
   }
 }

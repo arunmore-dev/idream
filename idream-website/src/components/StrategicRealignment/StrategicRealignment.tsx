@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./StrategicRealignment.module.css";
 import StrategicPillars from "../StrategicPillars/StrategicPillars";
 import Image from "next/image";
@@ -29,8 +28,6 @@ const focusItems = [
 ];
 
 export default function StrategicRealignment() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -96,51 +93,33 @@ export default function StrategicRealignment() {
               ))}
             </div>
 
-            {/* Mobile Slider Container matching image_be7ffc.png rendering */}
+            {/* Mobile Native Swiper Container */}
             <div className={styles.mobileSliderWrapper}>
               <div className={styles.sliderClip}>
-                <div 
-                  className={styles.sliderTrack}
-                  style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                >
+                <div className={styles.sliderTrack}>
                   {focusItems.map((item, index) => (
-                    <div key={`mobile-${item.title}`} className={styles.sliderSlide}>
-                      <div
-                        className={`${styles.item} ${
-                          index % 2 === 0 ? styles.itemBlue : styles.itemPink
-                        }`}
-                      >
-                        <div className={styles.itemIconWrap}>
-                          <Image
-                            src={item.icon}
-                            alt={item.title}
-                            width={24}
-                            height={24}
-                            className={styles.itemIcon}
-                          />
-                        </div>
-                        <div className={styles.itemContent}>
-                          <h3 className={styles.itemTitle}>{item.title}</h3>
-                          <p className={styles.itemText}>{item.description}</p>
-                        </div>
+                    <div
+                      key={`mobile-${item.title}`}
+                      className={`${styles.item} ${
+                        index % 2 === 0 ? styles.itemBlue : styles.itemPink
+                      }`}
+                    >
+                      <div className={styles.itemIconWrap}>
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          width={24}
+                          height={24}
+                          className={styles.itemIcon}
+                        />
+                      </div>
+                      <div className={styles.itemContent}>
+                        <h3 className={styles.itemTitle}>{item.title}</h3>
+                        <p className={styles.itemText}>{item.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Slider Dots Controller */}
-              <div className={styles.dotsContainer}>
-                {focusItems.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`${styles.dot} ${
-                      activeIndex === index ? styles.activeDot : ""
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
               </div>
             </div>
           </div>
