@@ -77,9 +77,9 @@ export default function Footer() {
               &copy; 2026 IDream Film Infrastructure Company Limited. All rights reserved.
             </p>
             <div className={styles.legalLinks}>
-              <Link href="#" className={styles.legalLink}>Privacy Policy</Link>
-              <Link href="#" className={styles.legalLink}>Terms of Service</Link>
-              <Link href="#" className={styles.legalLink}>Disclaimer</Link>
+              <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
+              <Link href="/" className={styles.legalLink}>Terms of Service</Link>
+              <Link href="/" className={styles.legalLink}>Disclaimer</Link>
             </div>
           </div>
           <p className={styles.bseInfo}>

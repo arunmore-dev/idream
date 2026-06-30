@@ -1,0 +1,315 @@
+.page {
+    padding: 160px 0 120px;
+    background: #ffffff;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1795px;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
+  
+  /* ================= HEADER HERO ================= */
+  
+  .header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding-top: 40px;
+    padding-bottom: 57px;
+    margin-bottom: 56px;
+  }
+  
+  .title {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 105%;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    max-width: 753px;
+  }
+  
+  .description {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    color: #475569;
+    margin: 0;
+    max-width: 753px;
+  }
+  
+  /* ================= SPLIT TWO-COLUMN WRAPPER ================= */
+  
+  .splitBody {
+    display: flex;
+    align-items: flex-start;
+    gap: 59px;
+  }
+  
+  /* ---------- Left Sticky Sidebar Menu ---------- */
+  
+  .sidebar {
+    width: 225px;
+    position: sticky;
+    top: 120px;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+  
+  .sidebarTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0.99px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin: 0 0 24px 0;
+  }
+  
+  .navigationList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .navButton {
+    background: transparent;
+    text-align: left;
+    padding: 4px 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    line-height: 120%;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .navActive {
+    font-weight: 600;
+    color: #0d0d1a !important;
+    opacity: 1 !important;
+    border-left: 2px solid #0d0d1a;
+    padding-left: 8px;
+  }
+  
+  .navInactive {
+    font-weight: 400;
+    color: #0d0d1a;
+    opacity: 0.5;
+  }
+  
+  /* ---------- Right Dynamic Main Content Body ---------- */
+  
+  .contentSection {
+    flex: 1;
+    max-width: 1244px;
+  }
+  
+  .introText {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29.6px;
+    color: #6b7280;
+    margin: 0 0 40px 0;
+  }
+  
+  .richText {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29.6px;
+    color: #374151;
+  }
+  
+  .richText section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    margin-bottom: 0;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .richText section:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  
+  .richText h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 27.3px;
+    letter-spacing: -0.25px;
+    color: #0d0d1a;
+    margin: 0 0 20px 0;
+  }
+  
+  .richText p {
+    margin-bottom: 24px;
+  }
+  
+  .richText strong {
+    font-weight: 600;
+    color: #0d0d1a;
+  }
+  
+  /* ================= SPECIAL ORIGINAL FORMATTING ================= */
+  
+  .listBlock {
+    margin: 16px 0 24px 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .listItem {
+    margin-bottom: 6px;
+    padding-left: 32px;
+    text-indent: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    line-height: 29.6px;
+    color: #374151;
+  }
+  
+  .reviewText {
+    max-width: 716px;
+    opacity: 1;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 25.9px;
+    letter-spacing: 0px;
+    color: rgba(156, 163, 175, 1) !important;
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+  
+  .richText a {
+    color: #1e5aa8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .richText a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ================= PERFECT RESPONSIVE BREAKPOINTS ================= */
+  
+  @media (max-width: 1200px) {
+    .page {
+      padding: 100px 0 80px;
+    }
+  
+    .container {
+      padding: 0 40px;
+    }
+  
+    .header {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
+  
+    .title {
+      font-size: 64px;
+    }
+  
+    .splitBody {
+      flex-direction: column;
+      gap: 32px;
+    }
+  
+    .sidebar {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+  
+    .sidebarTitle {
+      font-size: 14px;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.5px;
+    }
+  
+    .navigationList {
+      flex-direction: row;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 16px;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+  
+    .navigationList::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .navButton {
+      font-size: 16px;
+      padding: 6px 12px;
+      width: auto;
+      background: #f1f5f9;
+      border-radius: 20px;
+    }
+  
+    .navActive {
+      border-left: none;
+      background: #0d0d1a;
+      color: #ffffff !important;
+      padding-left: 12px;
+    }
+    
+    .navInactive {
+      color: #475569;
+      opacity: 1;
+    }
+  
+    .reviewText {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 24px;
+    }
+  
+    .title {
+      font-size: 48px;
+    }
+  
+    .description {
+      font-size: 20px;
+    }
+  
+    .richText {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  
+    .listItem {
+      font-size: 18px;
+      line-height: 28px;
+      padding-left: 20px;
+    }
+    
+    .richText section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }

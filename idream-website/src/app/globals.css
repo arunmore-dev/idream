@@ -71,3 +71,15 @@ input,
 textarea {
   font-family: inherit;
 }
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 200px);
+}
