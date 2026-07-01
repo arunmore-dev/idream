@@ -1,0 +1,37 @@
+.heroContainer {
+    width: 100%;
+    /* Removed max-width constraints to break out of any container bounding box */
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    width: 100vw; /* Forces the image wrapper container to occupy the absolute viewport width */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 340px; /* Clean aspect ratio footprint for mobile viewports */
+  }
+  
+  .bannerImg {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* --- Tablet Adaptations --- */
+  @media (min-width: 768px) {
+    .imageWrapper {
+      height: 520px;
+    }
+  }
+  
+  /* --- Figma Parity Desktop Screen Configurations --- */
+  @media (min-width: 1024px) {
+    .imageWrapper {
+      /* Exact pixel-perfect height specification matching your layout template blueprints */
+      height: 716px; 
+    }
+  }

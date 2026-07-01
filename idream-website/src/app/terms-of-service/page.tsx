@@ -12,7 +12,8 @@ export default function PrivacyPolicy() {
 
   return (
     <LegalPage
-      title="Privacy Policy"
+      title="
+Terms of Service"
       description="How Kayana Ltd collects, uses, and protects personal data in connection with the Fiscal platform."
       introParagraph='Kayana Ltd ("Fiscal", "we", "us") is committed to protecting your personal data. This policy describes what we collect, why we collect it, and how you can exercise your rights under UK GDPR and EU GDPR.'
       sidebarItems={sidebarNavTree}

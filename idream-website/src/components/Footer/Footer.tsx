@@ -78,8 +78,8 @@ export default function Footer() {
             </p>
             <div className={styles.legalLinks}>
               <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
-              <Link href="/" className={styles.legalLink}>Terms of Service</Link>
-              <Link href="/" className={styles.legalLink}>Disclaimer</Link>
+              <Link href="/terms-of-service" className={styles.legalLink}>Terms of Service</Link>
+              <Link href="/disclaimer" className={styles.legalLink}>Disclaimer</Link>
             </div>
           </div>
           <p className={styles.bseInfo}>

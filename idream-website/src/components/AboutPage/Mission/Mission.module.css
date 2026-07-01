@@ -1,0 +1,100 @@
+.missionSection {
+    width: 100%;
+    background: rgba(234, 245, 255, 1);
+    box-sizing: border-box;
+    padding: 60px 24px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1728px;
+    margin: 0 auto;
+  }
+  
+  .titleColumn {
+    width: 100%;
+  }
+  
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    background: linear-gradient(90deg, #466BFF 0%, #F63333 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .statementColumn {
+    width: 100%;
+  }
+  
+  .statement {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+  }
+  
+  .highlightText {
+    color: rgba(189, 30, 30, 1);
+  }
+  
+  /* --- Tablets --- */
+  @media (min-width: 768px) {
+    .title {
+      font-size: 26px;
+    }
+    .statement {
+      font-size: 28px;
+    }
+  }
+  
+  /* --- Figma Parity Desktops --- */
+  @media (min-width: 1024px) {
+    .missionSection {
+      padding: 100px 100px;
+    }
+  
+    .container {
+      flex-direction: row;
+      /* Aligns left item closer to the right content column */
+      justify-content: flex-end; 
+      align-items: flex-start;
+      /* Controlled gap to adjust exactly how close the title sits to the paragraph */
+      gap: 500px; 
+    }
+  
+    .titleColumn {
+      width: auto;
+      display: flex;
+      /* Shifts the text inside the wrapper right-aligned */
+      justify-content: flex-end; 
+      flex-shrink: 0;
+    }
+  
+    .title {
+      font-size: 24px;
+      white-space: nowrap;
+    }
+  
+    .statementColumn {
+      max-width: 938px;
+      width: 100%;
+    }
+  
+    .statement {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+  }

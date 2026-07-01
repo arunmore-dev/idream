@@ -1,0 +1,320 @@
+.leadershipSection {
+    width: 100%;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 60px 24px;
+  }
+  
+  .container {
+    max-width: 1585px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header Configurations */
+  .headerBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .titleColumn {
+    width: auto;
+  }
+  
+  .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    background: linear-gradient(90deg, #466BFF 0%, #F63333 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  
+  .description {
+    width: 100%;
+    max-width: 938px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+  }
+  
+  /* Interactive Tabs Component Styles */
+  .tabToggleRow {
+    display: flex;
+    align-items: center;
+    background: rgba(222, 222, 222, 0.5);
+    padding: 4px;
+    border-radius: 40px;
+    width: fit-content;
+    margin-bottom: 48px;
+    gap: 4px;
+  }
+  
+  .tabBtn {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 21px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .activeTab {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .inactiveTab {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+  }
+  
+  /* Grid Layout Matrix */
+  .teamGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  /* Card Scaffold and Overlays */
+  .cardContainer {
+    position: relative;
+    width: 100%;
+    max-width: 363px;
+    height: 560px;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .mainCardContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .imageFrame {
+    position: relative;
+    width: 100%;
+    height: 468px;
+    background: rgba(228, 228, 231, 1);
+  }
+  
+  .avatar {
+    object-fit: cover;
+  }
+  
+  .cardFooter {
+    height: 92px;
+    box-sizing: border-box;
+    padding: 16px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .metaTexts {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .badgeLabel {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(102, 102, 96, 1);
+  }
+  
+  .memberName {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: rgba(20, 20, 20, 1);
+    margin: 2px 0;
+  }
+  
+  .memberRole {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 100%;
+    color: rgba(102, 102, 96, 1);
+  }
+  
+  .actionBtn {
+    width: 32px;
+    height: 32px;
+    background: rgba(163, 184, 50, 1);
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Sliding Information Card Sheet */
+  .slidingOverlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(234, 245, 255, 1); /* Light Blue Tint */
+    box-sizing: border-box;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 5;
+  }
+  
+  .overlayOpened {
+    transform: translateY(-100%);
+  }
+  
+  .overlayTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  /* Exact Figma Parameters for the Badge Container */
+  .overlayPartnerBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 56px;
+    height: 18px;
+    padding: 0 8px;
+    opacity: 1;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 13.5px;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(216, 131, 115, 1);
+    border-radius: 20px; /* Capsule form structure */
+  }
+  
+  .closeBtn {
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: rgba(6, 37, 126, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlayBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .overlayName {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 110%;
+    color: rgba(6, 37, 126, 1);
+    margin: 0 0 4px 0;
+  }
+  
+  .overlayRole {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: rgba(6, 37, 126, 0.8);
+    margin: 0 0 16px 0;
+  }
+  
+  .overlayBioText {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    overflow-y: auto;
+    max-height: 180px;
+  }
+  
+  /* Vertically Stacked Role Info Labels Grid */
+  .overlayFooterTags {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid rgba(6, 37, 126, 0.15);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  
+  .footerTagItem {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(6, 37, 126, 1);
+  }
+  
+  /* --- Tablets & Large Desktops Adaptation --- */
+  @media (min-width: 1024px) {
+    .leadershipSection {
+      padding: 100px 100px;
+    }
+  
+    .headerBlock {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 80px;
+      margin-bottom: 60px;
+    }
+  
+    .description {
+      line-height: 1.3;
+    }
+  
+    .teamGrid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }

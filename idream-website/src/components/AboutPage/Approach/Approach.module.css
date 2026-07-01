@@ -1,0 +1,180 @@
+.approachSection {
+  width: 100%;
+  background-color: rgba(245, 245, 240, 1);
+  box-sizing: border-box;
+  padding: 60px 24px;
+}
+
+.container {
+  max-width: 1585px; /* Scaled up to give the whole layout more breathing room */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* --- Header Section Block --- */
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+  background: linear-gradient(90deg, #466BFF 0%, #F63333 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.mainDescription {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+/* --- Body Layout Grid Elements --- */
+.contentRow {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 440px;
+  overflow: hidden;
+}
+
+.productionImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.stepsColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stepRow {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.stepTitleWrapper {
+  width: 100%;
+}
+
+.stepTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 100%;
+  color: rgba(20, 20, 20, 1);
+  margin: 0;
+}
+
+.stepDescriptionWrapper {
+  width: 100%;
+}
+
+.stepDescription {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(102, 102, 96, 1);
+  margin: 0;
+}
+
+/* --- Larger Screen System Modifications --- */
+@media (min-width: 1024px) {
+  .approachSection {
+    padding: 100px 100px; /* Clean tracking paddings to match screen layout boundaries */
+  }
+
+  .headerRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .mainDescription {
+    font-size: 24px; /* Scaled header text up */
+    max-width: 960px; 
+    line-height: 1.45;
+  }
+
+  .contentRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 80px; /* Spacious column gap */
+  }
+
+  .imageWrapper {
+    max-width: 460px; /* Expanded image width size */
+    min-height: 480px; /* Expanded image height size */
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .stepsColumn {
+    max-width: 880px; /* Larger right text box width boundaries */
+  }
+
+  .stepRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 26px 0; /* Expanded padding structure inside lists */
+  }
+
+  .stepTitleWrapper {
+    width: 180px;
+    flex-shrink: 0;
+  }
+
+  .stepTitle {
+    font-size: 24px; /* Scaled step text up */
+  }
+
+  .stepDescriptionWrapper {
+    max-width: 640px;
+  }
+
+  .stepDescription {
+    font-size: 17px; /* Scaled description up */
+    line-height: 1.5;
+  }
+}

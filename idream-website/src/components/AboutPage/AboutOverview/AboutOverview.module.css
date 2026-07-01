@@ -1,0 +1,131 @@
+.overviewContainer {
+    width: 100%;
+    max-width: 1785px; /* Standardized outer boundary box limit */
+    margin: 0 auto;
+    /* INCREASED TOP PADDING: Creates a distinct gap below your navigation bar on mobile */
+    padding: 100px 24px 80px 24px; 
+    box-sizing: border-box;
+  }
+  
+  .gridContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .mainHeading {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #0c111d; /* Deep slate rich tone */
+    margin: 0;
+  }
+  
+  .desktopOnly {
+    display: none;
+  }
+  
+  .rightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+  
+  .description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6; /* Generous line gaps for description */
+    color: #475467;
+    margin: 0;
+  }
+  
+  .reachWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-top: 1px solid #e4e7ec; /* Clean, thin divider rule */
+    padding-top: 24px;
+  }
+  
+  .reachTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8; /* Exact muted gray-blue title tone from image_c7d400.png */
+    margin: 0;
+  }
+  
+  .statsGrid {
+    display: flex;
+    gap: 64px; /* Clear structural horizontal separation */
+  }
+  
+  .statBox {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Vertical stacked gap alignment */
+  }
+  
+  .statNumber {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    color: #0c111d;
+  }
+  
+  .statLabel {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #667085;
+  }
+  
+  /* --- Responsive Desktop Media Query --- */
+  @media (min-width: 1024px) {
+    .overviewContainer {
+      /* SIGNIFICANTLY INCREASED TOP PADDING (220px): 
+         This pushes the section down, creating a massive, clean white-space gap 
+         between your header/navbar and the main title text just like the original design. */
+      padding: 220px 100px 140px 100px; 
+    }
+  
+    .gridContainer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 80px;
+    }
+  
+    .mainHeading {
+      font-size: 84px; /* Dialed down slightly so it maps exactly into 2 clean rows */
+      width: 52%;
+      max-width: 760px;
+    }
+  
+    .desktopOnly {
+      display: inline;
+    }
+  
+    .rightContent {
+      width: 44%;
+      max-width: 580px;
+      margin-top: 12px; /* Pulls paragraph down to sit evenly across from the header's first line */
+    }
+  
+    .description {
+      font-size: 21px;
+      line-height: 1.55; /* Perfectly proportioned paragraph readability layout gaps */
+    }
+  
+    .statNumber {
+      font-size: 56px; /* Crisp high contrast serif sizing */
+    }
+  }

@@ -1,0 +1,152 @@
+.valuesSection {
+    width: 100%;
+    background: rgba(250, 245, 255, 1);
+    box-sizing: border-box;
+    padding: 60px 24px;
+  }
+  
+  .wrapper {
+    max-width: 1728px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Base mobile fallback wrapper layout */
+  .contentLayout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .headerBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .sectionTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    background: linear-gradient(90deg, #466BFF 0%, #F63333 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  
+  .subTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+  }
+  
+  .cardsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  .card {
+    box-sizing: border-box;
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-height: 280px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .normalCard {
+    background: rgba(245, 240, 240, 1);
+    color: rgba(20, 20, 20, 1);
+  }
+  
+  .normalCard .cardDesc {
+    color: rgba(20, 20, 20, 0.7);
+  }
+  
+  .featuredCard {
+    background: rgba(214, 131, 112, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .featuredCard .cardTitle {
+    color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .featuredCard .cardDesc {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .plusSign {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    opacity: 0.6;
+  }
+  
+  .cardTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  .cardDesc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* --- Tablet & Desktop Adaptations --- */
+  @media (min-width: 1024px) {
+    .valuesSection {
+      padding: 100px 100px;
+    }
+  
+    .wrapper {
+      /* Direct horizontal alignment mapping matching the text configurations */
+      align-items: flex-end; 
+    }
+  
+    .contentLayout {
+      /* Restricts width to mirror structural alignments perfectly */
+      max-width: 1640px; 
+      width: 100%;
+    }
+  
+    .cardsGrid {
+      flex-direction: row;
+      gap: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: none;
+    }
+  
+    .card {
+      flex: 1;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .card:not(:last-child) {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  
+    .cardDesc {
+      line-height: 1.5;
+    }
+  }
