@@ -83,3 +83,14 @@ body {
 main {
   min-height: calc(100vh - 200px);
 }
+
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/Instrument%20Serif/InstrumentSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('/fonts/Inter%20Regular/inter-regular.ttf') format('truetype');
+  font-weight: 400;
+}

@@ -19,7 +19,7 @@ export default function Leadership() {
   const boardMembers: TeamMember[] = [
     {
       name: "Maya Chen",
-      role: "Founder & CEO",
+      role: "Chief Executive Officer",
       badge: "Partner",
       tags: ["Founder", "CEO", "Partner"],
       bio: "Maya leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
@@ -29,24 +29,24 @@ export default function Leadership() {
       name: "Julian Rev",
       role: "Chief Financial Officer",
       badge: "Partner",
-      tags: ["Finance", "Strategy", "Partner"],
-      bio: "Julian oversees financial strategies and corporate development frameworks. With over fifteen years managing technology portfolios, he bridges business architectures and sustainable fiscal growth elegantly.",
+      tags: ["Founder", "CEO", "Partner"],
+      bio: "Julian leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
       image: "/images/team2.png"
     },
     {
       name: "Emily Harper",
       role: "Creative Lead",
       badge: "Partner",
-      tags: ["Creative", "Design", "Partner"],
-      bio: "Emily directs cross-functional creative teams, setting experience paradigms for global digital architectures. Her continuous target lies inside pioneering boundary-pushing client solutions.",
+      tags: ["Founder", "CEO", "Partner"],
+      bio: "Emily leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
       image: "/images/team3.png"
     },
     {
       name: "Roman Hoff",
       role: "Purchase Head",
       badge: "Partner",
-      tags: ["Logistics", "Operations", "Partner"],
-      bio: "Roman designs modern logistics models and strategic alliance networks globally. His structural methodology scales enterprise efficiency objectives seamlessly from infrastructure levels up.",
+      tags: ["Founder", "CEO", "Partner"],
+      bio: "Roman leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
       image: "/images/team4.png"
     }
   ];
@@ -135,12 +135,11 @@ export default function Leadership() {
                   </div>
                 </div>
 
-                {/* Sliding Intro Overlay Panel (Matches Original Image 1 perfectly) */}
+                {/* Sliding Information Card Sheet Overlay */}
                 <div className={`${styles.slidingOverlay} ${isOverlayOpen ? styles.overlayOpened : ''}`}>
                   <div className={styles.overlayTop}>
-                    {/* The Figma styled Partner Capsule Badge */}
                     <span className={styles.overlayPartnerBadge}>
-                      {"● " + member.badge}
+                      <span className={styles.dot}>●</span> {member.badge}
                     </span>
                     <button onClick={() => setOpenCardIndex(null)} className={styles.closeBtn}>
                       {"×"}
@@ -149,11 +148,15 @@ export default function Leadership() {
 
                   <div className={styles.overlayBody}>
                     <h3 className={styles.overlayName}>{member.name}</h3>
-                    <h4 className={styles.overlayRole}>{member.role}</h4>
+                    
+                    <div className={styles.roleBadgeWrapper}>
+                      <span className={styles.overlayRoleBadge}>{member.role}</span>
+                    </div>
+                    
                     <p className={styles.overlayBioText}>{member.bio}</p>
                   </div>
 
-                  {/* Vertically Listed Role tags container like original */}
+                  {/* Horizontal listed bottom tags row */}
                   <div className={styles.overlayFooterTags}>
                     {member.tags.map((tag, tIdx) => (
                       <span key={tIdx} className={styles.footerTagItem}>{tag}</span>

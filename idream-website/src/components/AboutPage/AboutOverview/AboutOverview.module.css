@@ -36,6 +36,7 @@
   
   .description {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 400;
     font-size: 18px;
     line-height: 1.6; /* Generous line gaps for description */
@@ -53,6 +54,7 @@
   
   .reachTitle {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 0.08em;
@@ -74,6 +76,7 @@
   
   .statNumber {
     font-family: 'Instrument Serif', serif;
+    font-family: 'Instrument Serif';
     font-weight: 400;
     font-size: 32px;
     line-height: 1;
@@ -82,6 +85,7 @@
   
   .statLabel {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
@@ -105,7 +109,7 @@
     }
   
     .mainHeading {
-      font-size: 84px; /* Dialed down slightly so it maps exactly into 2 clean rows */
+      font-size: 96px; /* Dialed down slightly so it maps exactly into 2 clean rows */
       width: 52%;
       max-width: 760px;
     }
@@ -126,6 +130,6 @@
     }
   
     .statNumber {
-      font-size: 56px; /* Crisp high contrast serif sizing */
+      font-size: 32px; /* Crisp high contrast serif sizing */
     }
   }

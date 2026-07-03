@@ -31,7 +31,7 @@ export default function Footer() {
             <div className={styles.linkColumn}>
               <h4 className={styles.columnTitle}>Quick Links</h4>
               <ul className={styles.linkList}>
-                <li><Link href="#about" className={styles.footerLink}>About Us</Link></li>
+                <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
                 <li><Link href="#business-segments" className={styles.footerLink}>Business Segments</Link></li>
                 <li><Link href="#strategy" className={styles.footerLink}>Strategy</Link></li>
                 <li><Link href="#investor-relations" className={styles.footerLink}>Investor Relations</Link></li>

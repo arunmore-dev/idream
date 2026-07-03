@@ -28,6 +28,7 @@
   
   .sectionTitle {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 400;
     font-size: 24px;
     line-height: 100%;
@@ -43,6 +44,7 @@
   
   .subTitle {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 400;
     font-size: 20px;
     line-height: 100%;

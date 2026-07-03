@@ -23,6 +23,7 @@
 
 .title {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 22px;
   line-height: 100%;
@@ -40,6 +41,7 @@
 .mainDescription {
   width: 100%;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 22px;
   line-height: 1.4;
