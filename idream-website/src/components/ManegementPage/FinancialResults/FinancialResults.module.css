@@ -1,0 +1,233 @@
+/* Core Section Container Wrapper */
+.sectionContainer {
+  background-color: #FFFFFF;
+  padding: 100px 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Header structural layout framework */
+.headerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1528px;
+  width: 100%;
+  margin-bottom: 56px;
+}
+
+/* RED TAG "QUARTERLY RESULTS" */
+.redTag {
+  color: #FF0000;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Title Header */
+.title {
+  color: #101828;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  margin: 0;
+}
+
+/* Subtext description styling */
+.description {
+  color: #4A5565;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  margin: 0;
+}
+
+/* Table Wrapper Frame Container */
+.tableContainer {
+  width: 100%;
+  max-width: 1628px;
+  border-collapse: collapse;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Table Headers Style Row wrapper */
+.tableHeaderRow {
+  background-color: #EFF6FF;
+}
+
+/* Header Columns Text Parameters */
+.th {
+  color: #6A7282;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding: 18px 24px;
+}
+
+/* Body Data Rows layout */
+.tableBodyRow {
+  border-bottom: 1px solid #ECECF0;
+  transition: background-color 0.2s ease;
+}
+
+.tableBodyRow:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+.tableBodyRow:hover {
+  background-color: #F8FAFC;
+}
+
+/* Data Table cells padding parameter configurations */
+.td {
+  padding: 24px;
+  vertical-align: middle;
+}
+
+/* Column Specific Text Classes */
+.periodText {
+  color: #101828;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  margin: 0;
+}
+
+.typeText {
+  color: #4A5565;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  margin: 0;
+}
+
+.dateText {
+  color: #4A5565;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  margin: 0;
+}
+
+/* Status badge — "Published" tag, per Figma spec */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 87px;
+  height: 24px;
+  box-sizing: border-box;
+  opacity: 1;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  border-radius: 4px;
+  background: #0596691A;
+  color: #059669;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  white-space: nowrap;
+}
+
+/* Download action — plain icon button, no fill/border */
+.downloadIcon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #FF0000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all .25s ease;
+}
+
+
+
+
+/* ==========================================================
+   📱 RESPONSIVE BREAKPOINTS (Tablet and Mobile adaptation)
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  .sectionContainer {
+    padding: 80px 48px;
+  }
+}
+
+/* Converts standard table layout matrix to elegant mobile blocks cards structure */
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 60px 24px;
+  }
+
+  .headerGroup {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  /* Unset grid tables standard format layout onto pure stacked blocks cards */
+  .tableContainer,
+  .tableContainer thead,
+  .tableContainer tbody,
+  .tableContainer th,
+  .tableContainer td,
+  .tableContainer tr {
+    display: block;
+    width: 100%;
+  }
+
+  .tableContainer thead {
+    display: none; /* Hide headings row on mobile device sizes */
+  }
+
+  .tableBodyRow {
+    border: 1px solid #ECECF0;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFFF !important;
+  }
+
+  .td {
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+  }
+
+  /* Create left text identifiers for contextual field identification */
+  .td::before {
+    font-weight: 700;
+    font-size: 13px;
+    color: #6A7282;
+    text-transform: uppercase;
+    content: attr(data-label);
+  }
+
+  .downloadBtn {
+    margin-top: 0;
+  }
+}

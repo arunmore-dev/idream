@@ -9,7 +9,8 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Business", href: "#services" },
   { label: "Strategy", href: "#" },
-  { label: "Investors", href: "#investor-relations" },
+  { label: "Manegement", href: "/manegement" },
+  { label: "Investors", href: "/investors" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -53,7 +54,7 @@ export default function Header() {
               className={styles.ctaButton}
               onClick={handleNavClick}
             >
-              Investor Login
+              Investor Login 
             </Link>
           </div>
         </nav>

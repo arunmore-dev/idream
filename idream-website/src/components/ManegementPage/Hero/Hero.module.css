@@ -1,0 +1,224 @@
+/* Hero Container (Background color matching #0F192E with top/side paddings) */
+.heroContainer {
+    background-color: #0F192E;
+    margin-top: 100px;
+    padding: 62px 200px 78px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Inner frame containing texts and action buttons */
+  .contentFrame {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Text elements wrapper */
+  .textGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* INVESTOR RELATIONS (Tag) */
+  .tag {
+    color: #FF0000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+  
+  /* Committed to Transparency & Long-Term Value */
+  .title {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1.1; /* Adjusted line height for natural reading of large wraps */
+    margin: 0;
+    letter-spacing: 0%;
+  }
+  
+  /* Empowering our stakeholders... description */
+  .description {
+    color: #F3E8FF;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4; /* Soft line height for body readability */
+    max-width: 1000px;
+    margin: 0;
+  }
+  
+  /* Buttons container */
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  /* Download Annual Report button */
+  .btnPrimary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 312px;
+    height: 64px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btnPrimary:hover {
+    background-color: #D60000;
+  }
+  
+  /* View Financial Results button */
+  .btnSecondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 288px;
+    height: 64px;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .btnSecondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* --- STATS BAR SECTION --- */
+  .statsBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+    box-sizing: border-box;
+  }
+  
+  /* Individual Stat Block (Flex container mimicking figma auto-layouts) */
+  .statBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 166px;
+  }
+  
+  /* Stat Value (e.g., BSE Listed, 480 Cr) */
+  .statValue {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Stat Sub-label (e.g., EXCHANGE LISTED, FY2025 REVENUE) */
+  .statLabel {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+  
+  /* Specific red colored sub-labels like Exchange Listed */
+  .redLabel {
+    color: #FF0000;
+  }
+  
+  /* Standardized grey labels for other statistics */
+  .greyLabel {
+    color: #A0AEC0; 
+  }
+  
+  
+  /* ==========================================================
+     📱 RESPONSIVE BREAKPOINTS (Tablet and Mobile adaptation)
+     ========================================================== */
+  
+  /* Tablet & Smaller Screens (e.g., ipads, smaller laptops) */
+  @media (max-width: 1024px) {
+    .heroContainer {
+      padding: 60px 48px;
+    }
+  
+    .title {
+      font-size: 54px;
+    }
+  
+    .statsBar {
+      margin-top: 60px;
+      gap: 32px;
+      flex-wrap: wrap; /* Wraps items nicely on smaller screens */
+    }
+  
+    .statBlock {
+      flex: 1 1 calc(50% - 32px); /* Displays stats in a 2x2 grid */
+    }
+  }
+  
+  /* Mobile Screens */
+  @media (max-width: 768px) {
+    .heroContainer {
+      padding: 40px 24px;
+    }
+  
+    .contentFrame {
+      gap: 32px;
+    }
+  
+    .title {
+      font-size: 36px;
+    }
+  
+    .description {
+      font-size: 16px;
+    }
+  
+    .buttonGroup {
+      flex-direction: column; /* Stack buttons vertically on phones */
+      width: 100%;
+      gap: 16px;
+    }
+  
+    .btnPrimary, .btnSecondary {
+      width: 100%; /* Stretch buttons to full width on mobile */
+      height: 56px;
+      font-size: 18px;
+    }
+  
+    .statsBar {
+      margin-top: 48px;
+      flex-direction: column; /* Stack stats one above the other */
+      gap: 24px;
+    }
+  
+    .statBlock {
+      width: 100%;
+    }
+  
+    .statValue {
+      font-size: 28px;
+    }
+  }

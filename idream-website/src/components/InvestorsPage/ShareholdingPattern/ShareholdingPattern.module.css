@@ -1,0 +1,241 @@
+/* Light Main Container matching the theme layout (#F2F8FF) */
+.sectionContainer {
+    background-color: #F2F8FF;
+    padding: 100px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Header typography group alignment definitions */
+  .headerGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1528px;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+  
+  /* RED TAG "SHAREHOLDING" */
+  .redTag {
+    color: #FF0000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  /* Header Title "Shareholding Pattern" */
+  .title {
+    color: #101828;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Ownership description subtitle text */
+  .description {
+    color: #4A5565;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Main row framework matching the 1328px horizontal split */
+  .contentFlex{
+    width:100%;
+    max-width:1530px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:180px;
+}
+  
+  /* Chart container box matching the 300px square constraint exactly */
+  .chartContainer {
+    position: relative;
+    width:380px;
+    height:380px;
+    flex-shrink:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Center text absolute element positioning within the donut center */
+  .centerTextGroup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .centerNumber {
+    color: #101828;
+    font-weight: 700;
+    font-size: 32px; /* From image 4 layout measurements */
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Right data list configuration stack wrapper */
+  .rightDataColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex:1;
+    max-width:none; /* Match Figma frame fill constraints */
+    gap: 24px;
+  }
+  
+  .listGroup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Row-level layout items with 1px border dividers */
+  .dataRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; /* Match Figma padding layout tokens */
+    border-bottom: 1px solid #ECECF0; /* Exact border token color from image 10 */
+    box-sizing: border-box;
+  }
+  
+  /* Inner left segment aligning indicators and titles */
+  .labelSide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Legend dot asset dimensions box values */
+  .colorIndicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px; /* Slightly rounded square vectors */
+    flex-shrink: 0;
+  }
+  
+  /* Segment text tags values */
+  .rowTitle {
+    color: #101828;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Percentage numerical readouts */
+  .rowPercentage {
+    color: #101828;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    margin: 0;
+    min-width:140px;
+    text-align:right;
+  }
+  
+  /* Download Action Button Element specifications */
+  .downloadButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 48px;
+    padding: 0px 32px;
+    border-radius: 8px;
+    background-color: #0F192E;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .downloadButton:hover {
+    background-color: #1A2A4A;
+  }
+  
+  .downloadText {
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+  }
+  
+  
+  /* ==========================================================
+     📱 RESPONSIVE BREAKPOINTS (Tablet and Mobile adaptation)
+     ========================================================== */
+  
+  @media (max-width: 1200px) {
+    .sectionContainer {
+      padding: 80px 48px;
+    }
+    
+    .contentFlex {
+      gap: 48px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .contentFlex {
+      flex-direction: column; /* Stacks layout on smaller views */
+      align-items: center;
+      gap: 56px;
+    }
+  
+    .rightDataColumn {
+      max-width: 100%;
+    }
+    
+    .downloadButton {
+      width: 100%; /* Make button wide on tablets & mobile viewports */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sectionContainer {
+      padding: 60px 24px;
+    }
+  
+    .headerGroup {
+      margin-bottom: 40px;
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  
+    .description {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  
+    .rowTitle {
+      font-size: 16px;
+    }
+  
+    .rowPercentage {
+      font-size: 20px;
+    }
+  }

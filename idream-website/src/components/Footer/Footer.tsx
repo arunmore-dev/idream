@@ -34,7 +34,8 @@ export default function Footer() {
                 <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
                 <li><Link href="#business-segments" className={styles.footerLink}>Business Segments</Link></li>
                 <li><Link href="#strategy" className={styles.footerLink}>Strategy</Link></li>
-                <li><Link href="#investor-relations" className={styles.footerLink}>Investor Relations</Link></li>
+                <li><Link href="/manegement" className={styles.footerLink}>Manegement</Link></li>
+                <li><Link href="/investors" className={styles.footerLink}>Investor Relations</Link></li>
               </ul>
             </div>
 
@@ -49,7 +50,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Contact */}
+            {/* Column 3: Contact */} 
             <div className={styles.contactColumn}>
               <h4 className={styles.columnTitle}>Contact</h4>
               <ul className={styles.contactList}>

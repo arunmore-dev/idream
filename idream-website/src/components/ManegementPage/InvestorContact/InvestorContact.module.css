@@ -1,0 +1,236 @@
+/* Dark Container to match Dark Theme Governance section */
+.sectionContainer {
+    background-color: #0F192E;
+    padding: 100px 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Header structural layout block */
+  .headerGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1328px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+  
+  /* RED TAG "CONTACT" */
+  .redTag {
+    color: #FF0000;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  /* Header Title "Investor Contact" */
+  .title {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* 2-Column Horizontal Grid Container */
+  .gridContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1628px;
+    gap: 32px; /* Layout gap between the two contact blocks */
+    box-sizing: border-box;
+    margin-bottom: 64px; /* Space before the grievance text */
+  }
+  
+  /* Individual Contact Card Blocks */
+  .contactCard {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #1A2A4A;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  /* Red Bold Header tags inside the cards */
+  .cardRoleTag {
+    color: #FF0000;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    margin: 0 0 24px 0;
+  }
+  
+  /* Main Name Heading Element (32px from Figma specs) */
+  .nameHeading {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
+    margin: 0 0 12px 0;
+  }
+  
+  /* Role details descriptor text */
+  .roleDetail {
+    color: #D0D5DD;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    margin: 0 0 32px 0;
+  }
+  
+  /* Divider Line within the cards */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 32px;
+    display: none;
+  }
+  
+  /* Contact Details Info Wrapper Block */
+  .detailsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Individual detail line wrapper */
+  .infoLine {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  /* Info link styles */
+  .infoLink {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .infoLink:hover {
+    color: #D0D5DD;
+  }
+  
+  /* Plain info text style (non-links) */
+  .infoText {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    margin: 0;
+  }
+  
+  /* Custom SVG icon colors */
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #FF0000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  /* ==========================================================
+     📬 GRIEVANCE REDRESSAL NOTE STYLES
+     ========================================================== */
+  .grievanceNote {
+    width: 100%;
+    max-width: 1328px;
+    text-align: center;
+    color: #6A7282; /* Base text matching Figma value background parameter mapping */
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .grievanceLink {
+    color: #FF0000; /* Distinct red highlight matching Figma color mapping */
+    font-weight: 600; /* Semi-bold style spec */
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  
+  .grievanceLink:hover {
+    opacity: 0.8;
+  }
+  
+  /* ==========================================================
+     📱 RESPONSIVE BREAKPOINTS (Tablet and Mobile adaptation)
+     ========================================================== */
+  
+  @media (max-width: 1200px) {
+    .sectionContainer {
+      padding: 80px 48px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .gridContainer {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sectionContainer {
+      padding: 60px 24px;
+    }
+  
+    .headerGroup {
+      margin-bottom: 40px;
+    }
+  
+    .title {
+      font-size: 32px;
+    }
+  
+    .nameHeading {
+      font-size: 26px;
+    }
+  
+    .contactCard {
+      padding: 24px;
+    }
+  
+    .roleDetail {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+  
+    .divider {
+      margin-bottom: 24px;
+    }
+  
+    .infoLink, .infoText {
+      font-size: 16px;
+    }
+  
+    .grievanceNote {
+      font-size: 14px;
+      line-height: 140%; /* Wrap cleanly on small viewports */
+    }
+  }
