@@ -1,0 +1,221 @@
+/* Deep Dark Section Background (#0F192E) */
+.committeesSection {
+  background-color: #0F192E;
+  width: 100%;
+  padding: 120px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Header Styles */
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #F3E8FF; /* Light tint for subheading contrast */
+  margin: 0;
+}
+
+/* 2x2 Grid Layout */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Card Styling: #1A2A4A background, 24px radius, 40px padding, 32px gap */
+.card {
+  background-color: #1A2A4A;
+  border: 1px solid rgba(255, 255, 255, 0.0784); /* #FFFFFF with 7.84% opacity */
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Inner Info Groups */
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Red Label (CHAIRPERSON) */
+.labelRed {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+/* Grey Label (MEMBERS, COMMITTEE ROLE) */
+.labelGrey {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #4A5565;
+}
+
+/* Values Typography */
+.valueWhite {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.valueMuted {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #F3E8FF;
+  margin: 0;
+}
+
+.valueRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Internal Divider Line */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.0784);
+  margin: 8px 0;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Laptop Screens (1200px - 1440px) */
+@media (max-width: 1400px) {
+  .committeesSection {
+    padding: 100px 80px;
+  }
+}
+
+/* Tablet Screens (768px - 1024px) */
+@media (max-width: 1024px) {
+  .committeesSection {
+    padding: 80px 40px;
+  }
+
+  .card {
+    padding: 32px;
+    gap: 24px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  .committeesSection {
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+
+  .valueWhite {
+    font-size: 16px;
+  }
+
+  .valueMuted,
+  .valueRole {
+    font-size: 14px;
+  }
+}

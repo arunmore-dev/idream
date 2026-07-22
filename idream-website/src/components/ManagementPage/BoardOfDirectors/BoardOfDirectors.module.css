@@ -1,0 +1,214 @@
+/* Main White Background Section */
+.boardSection {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 120px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Header Styles */
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 869px;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  color: #101828;
+  margin: 0;
+}
+
+.subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* Cards Grid Layout */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Individual Card Styling */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #ECECF0;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Card Header (Avatar + Badge) */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+/* Badge Base Styling */
+.badge {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Specific Badge Variants from Figma Opacities */
+.executive {
+  background-color: rgba(15, 25, 46, 0.102); /* #0F192E at 10.2% opacity */
+  color: #0F192E;
+}
+
+.independent {
+  background-color: rgba(255, 0, 0, 0.102); /* #FF0000 at 10.2% opacity */
+  color: #FF0000;
+}
+
+.nominee {
+  background-color: rgba(1, 106, 210, 0.102); /* Light Blue Tint */
+  color: #016AD2;
+}
+
+/* Card Body Text */
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.directorName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 110%;
+  color: #101828;
+  margin: 0;
+}
+
+.directorRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #FF0000;
+  margin: 0;
+}
+
+.directorDesc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #4A5565;
+  margin: 8px 0 0 0;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Small Desktop / Laptop (1200px - 1440px) */
+@media (max-width: 1400px) {
+  .boardSection {
+    padding: 100px 80px;
+  }
+  
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .boardSection {
+    padding: 80px 40px;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+/* Mobile Devices (Under 600px) */
+@media (max-width: 600px) {
+  .boardSection {
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}

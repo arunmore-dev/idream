@@ -1,0 +1,162 @@
+/* Hero Container Main Section */
+.heroSection {
+  background-color: #0F192E;
+  margin-top: 100px;
+  width: 100%;
+  padding: 120px 200px 80px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Header/Text Content Frame */
+.contentBox {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  opacity: 0.8;
+  margin: 0;
+  max-width: 800px;
+}
+
+/* Stats Row */
+.statsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 48px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+.statLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+/* ==========================================
+   Responsive Breakpoints (Desktop -> Mobile)
+   ========================================== */
+
+/* Laptop / Small Desktop (1200px and below) */
+@media (max-width: 1200px) {
+  .heroSection {
+    padding: 80px 80px 60px 80px;
+  }
+  
+  .heading {
+    font-size: 56px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+}
+
+/* Tablet / iPad (768px - 1024px) */
+@media (max-width: 900px) {
+  .heroSection {
+    padding: 60px 40px 40px 40px;
+  }
+
+  .contentBox {
+    gap: 24px;
+  }
+
+  .heading {
+    font-size: 42px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .statsContainer {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
+/* Mobile Devices (Under 600px) */
+@media (max-width: 600px) {
+  .heroSection {
+    padding: 40px 20px 32px 20px;
+  }
+
+  .container {
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: 115%;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .statsContainer {
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 32px;
+  }
+}

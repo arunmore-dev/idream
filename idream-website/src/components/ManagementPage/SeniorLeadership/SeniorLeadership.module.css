@@ -1,0 +1,156 @@
+/* Section Container with White Background (#FFFFFF) */
+.leadershipSection {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 120px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Header Styles */
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  color: #101828;
+  margin: 0;
+}
+
+.subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* Grid Layout: 3 Columns, Gap 24px */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Card Styling: Light Blue Tint (#F2F8FF), Radius 16px, Padding 32px, Gap 16px */
+.card {
+  background-color: #F2F8FF;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.leaderName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #101828;
+  margin: 0;
+}
+
+.leaderRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #FF0000;
+  margin: 0;
+}
+
+.leaderDesc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Small Desktop / Laptop (1200px - 1440px) */
+@media (max-width: 1400px) {
+  .leadershipSection {
+    padding: 100px 80px;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .leadershipSection {
+    padding: 80px 40px;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  .leadershipSection {
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 12px;
+  }
+}

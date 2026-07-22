@@ -1,0 +1,202 @@
+/* Background #F2F8FF with exact section padding */
+.policiesSection {
+  background-color: #F2F8FF;
+  width: 100%;
+  padding: 120px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Header Styles */
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #101828;
+  margin: 0;
+}
+
+.subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* Grid Layout: 2 columns, 24px gap */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Card Styling */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #ECECF0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #D1D5DB;
+  box-shadow: 0px 4px 12px rgba(16, 24, 40, 0.05);
+}
+
+/* Left Text Group (Title + Effective Date) */
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.policyTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #101828;
+  margin: 0;
+}
+
+.effectiveDate {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #4A5565;
+}
+
+/* Download Link Styling */
+.downloadBtn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #FF0000;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.downloadBtn:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   Responsive Styles (Tablet & Mobile)
+   ========================================== */
+
+/* Laptop / Small Desktop (1024px - 1400px) */
+@media (max-width: 1400px) {
+  .policiesSection {
+    padding: 100px 80px;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .policiesSection {
+    padding: 80px 40px;
+  }
+
+  .container {
+    gap: 48px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  .policiesSection {
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr; /* Switch to single column */
+    gap: 16px;
+  }
+
+  .card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .policyTitle {
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .effectiveDate {
+    font-size: 13px;
+  }
+
+  .downloadBtn {
+    font-size: 13px;
+  }
+}

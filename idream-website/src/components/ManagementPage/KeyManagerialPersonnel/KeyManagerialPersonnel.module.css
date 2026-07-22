@@ -1,0 +1,257 @@
+/* Container Background: Figma Hex #F8F6F4 */
+.kmpSection {
+  background-color: #F8F6F4;
+  width: 100%;
+  padding: 120px 200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* Header Styles */
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #FF0000;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 100%;
+  color: #101828;
+  margin: 0;
+}
+
+.subheading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #4A5565;
+  margin: 0;
+}
+
+/* List Layout */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Card Styling: Radius 16px, Padding 40px, Border #ECECF0 */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #ECECF0;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Avatar: Fixed 64x64px, Border Radius 32px */
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+/* Card Content Box */
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Top Row: Name/Role (Left) & Appointed Date (Right) */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.nameRoleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.memberName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #101828;
+  margin: 0;
+}
+
+.memberRole {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #FF0000;
+  margin: 0;
+}
+
+.appointedBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.appointedLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: #4A5565;
+  text-transform: uppercase;
+}
+
+.appointedDate {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #101828;
+  white-space: nowrap;
+}
+
+/* Bottom Row: Description (Left) & Meta ID (Right) */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #4A5565;
+  margin: 0;
+}
+
+.metaId {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #101828;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Small Desktop / Laptops (1200px - 1440px) */
+@media (max-width: 1400px) {
+  .kmpSection {
+    padding: 100px 80px;
+  }
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .kmpSection {
+    padding: 80px 40px;
+  }
+
+  .card {
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  .kmpSection {
+    padding: 40px 20px;
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .subheading {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .card {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .appointedBox {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .description {
+    line-height: 140%;
+  }
+}
