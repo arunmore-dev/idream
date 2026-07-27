@@ -21,8 +21,8 @@ export default function Hero() {
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
           <h1 className={styles.heading}>
-            Shaping the Future of <br />
-            <span className={styles.highlight}>Film &amp; Entertainment</span> <br />
+            Shaping the Future of <br className={styles.desktopOnly} />
+            <span className={styles.highlight}>Film &amp; Entertainment</span> <br className={styles.desktopOnly} />
             Infrastructure
           </h1>
           <p className={styles.subtext}>

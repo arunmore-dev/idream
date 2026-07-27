@@ -1,3 +1,4 @@
+/* ─── Base Outer Hero Section ────────────────────────── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -5,8 +6,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* ─── Background Video & Overlay ───────────────────────── */
 .bgMedia {
   position: absolute;
   inset: 0;
@@ -23,20 +26,19 @@
 .overlay {
   position: absolute;
   inset: 0;
-  /* background: rgba(0, 0, 0, 0.25);y */
+  /* background: rgba(0, 0, 0, 0.25); */
 }
 
-/* Outer wrapper */
+/* ─── Content Positioning ──────────────────────────────── */
 .contentWrapper {
   position: relative;
   z-index: 1;
   width: 100%;
 }
 
-/* Content aligned strictly to match the Header logo offset */
 .content {
   width: 100%;
-  padding: 180px 24px 80px 153px; /* 153px left padding places text directly under Header logo */
+  padding: 180px 24px 80px 153px; /* 153px left padding aligns with desktop grid */
   box-sizing: border-box;
 }
 
@@ -117,11 +119,15 @@
   object-fit: contain;
 }
 
+/* Helper class for desktop line-breaks */
+.desktopOnly {
+  display: inline;
+}
 /* ================= RESPONSIVE SCALING ================= */
 
 @media (max-width: 1400px) {
   .content {
-    padding-left: 100px; /* Adjusts smoothly for smaller laptop screens */
+    padding-left: 100px;
   }
 
   .heading {
@@ -143,7 +149,12 @@
   }
 }
 
+/* EXACT UNTOUCHED MOBILE STYLES */
 @media (max-width: 768px) {
+  .desktopOnly {
+    display: none; /* Mobile par hard line breaks remove ho jayenge */
+  }
+
   .content {
     padding: 140px 24px 60px;
     text-align: center;
@@ -153,7 +164,9 @@
   }
 
   .heading {
-    font-size: 36px;
+    font-size: 32px; /* Slight scale down so it flows naturally in 3-4 lines */
+    line-height: 1.2;
+    max-width: 320px; /* Constrains text width to perfectly stack in 3-4 lines */
   }
 
   .subtext {
