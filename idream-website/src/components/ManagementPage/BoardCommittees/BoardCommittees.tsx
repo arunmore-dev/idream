@@ -38,47 +38,45 @@ const committeesList: CommitteeData[] = [
 export default function BoardCommittees() {
   return (
     <section className={styles.committeesSection}>
-      <div className={styles.container}>
-        {/* Header Block */}
-        <div className={styles.headerBox}>
-          <span className={styles.tagline}>COMMITTEES</span>
-          <h2 className={styles.heading}>Board Committees</h2>
-          <p className={styles.subheading}>
-            Specialized committees ensuring focused oversight of critical governance areas.
-          </p>
-        </div>
+      {/* Header Block */}
+      <div className={styles.headerBox}>
+        <span className={styles.tagline}>COMMITTEES</span>
+        <h2 className={styles.heading}>Board Committees</h2>
+        <p className={styles.subheading}>
+          Specialized committees ensuring focused oversight of critical governance areas.
+        </p>
+      </div>
 
-        {/* 2x2 Grid Layout */}
-        <div className={styles.gridContainer}>
-          {committeesList.map((item, index) => (
-            <div key={index} className={styles.card}>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
+      {/* 2x2 Grid Layout */}
+      <div className={styles.gridContainer}>
+        {committeesList.map((item, index) => (
+          <div key={index} className={styles.card}>
+            <h3 className={styles.cardTitle}>{item.title}</h3>
 
-              <div className={styles.cardBody}>
-                {/* Chairperson Group */}
-                <div className={styles.infoGroup}>
-                  <span className={styles.labelRed}>CHAIRPERSON</span>
-                  <p className={styles.valueWhite}>{item.chairperson}</p>
-                </div>
+            <div className={styles.cardBody}>
+              {/* Chairperson Group */}
+              <div className={styles.infoGroup}>
+                <span className={styles.labelRed}>CHAIRPERSON</span>
+                <p className={styles.valueWhite}>{item.chairperson}</p>
+              </div>
 
-                {/* Members Group */}
-                <div className={styles.infoGroup}>
-                  <span className={styles.labelGrey}>MEMBERS</span>
-                  <p className={styles.valueMuted}>{item.members}</p>
-                </div>
+              {/* Members Group */}
+              <div className={styles.infoGroup}>
+                <span className={styles.labelGrey}>MEMBERS</span>
+                <p className={styles.valueMuted}>{item.members}</p>
+              </div>
 
-                {/* Divider Line */}
-                <div className={styles.divider} />
+              {/* Divider Line */}
+              <div className={styles.divider} />
 
-                {/* Committee Role Group */}
-                <div className={styles.infoGroup}>
-                  <span className={styles.labelGrey}>COMMITTEE ROLE</span>
-                  <p className={styles.valueRole}>{item.role}</p>
-                </div>
+              {/* Committee Role Group */}
+              <div className={styles.infoGroup}>
+                <span className={styles.labelGrey}>COMMITTEE ROLE</span>
+                <p className={styles.valueRole}>{item.role}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

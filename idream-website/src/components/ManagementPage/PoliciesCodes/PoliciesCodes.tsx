@@ -43,35 +43,33 @@ const policiesData: PolicyItem[] = [
 export default function PoliciesAndCodes() {
   return (
     <section className={styles.policiesSection}>
-      <div className={styles.container}>
-        {/* Header Block */}
-        <div className={styles.headerBox}>
-          <span className={styles.tagline}>POLICIES</span>
-          <h2 className={styles.heading}>Policies & Codes</h2>
-          <p className={styles.subheading}>
-            Key governance documents and statutory disclosures available for download.
-          </p>
-        </div>
+      {/* Header Block */}
+      <div className={styles.headerBox}>
+        <span className={styles.tagline}>POLICIES</span>
+        <h2 className={styles.heading}>Policies & Codes</h2>
+        <p className={styles.subheading}>
+          Key governance documents and statutory disclosures available for download.
+        </p>
+      </div>
 
-        {/* 2-Column Grid Layout */}
-        <div className={styles.gridContainer}>
-          {policiesData.map((policy, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.textGroup}>
-                <h3 className={styles.policyTitle}>{policy.title}</h3>
-                <span className={styles.effectiveDate}>{policy.effectiveDate}</span>
-              </div>
-              
-              <a 
-                href={policy.downloadUrl || '#'} 
-                className={styles.downloadBtn}
-                download
-              >
-                DOWNLOAD
-              </a>
+      {/* 2-Column Grid Layout */}
+      <div className={styles.gridContainer}>
+        {policiesData.map((policy, index) => (
+          <div key={index} className={styles.card}>
+            <div className={styles.textGroup}>
+              <h3 className={styles.policyTitle}>{policy.title}</h3>
+              <span className={styles.effectiveDate}>{policy.effectiveDate}</span>
             </div>
-          ))}
-        </div>
+            
+            <a 
+              href={policy.downloadUrl || '#'} 
+              className={styles.downloadBtn}
+              download
+            >
+              DOWNLOAD
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );

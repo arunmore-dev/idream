@@ -4,6 +4,7 @@ import AboutOverview from "@/components/AboutPage/AboutOverview/AboutOverview";
 import Mission from "@/components/AboutPage/Mission/Mission";
 import OurValues from "@/components/AboutPage/OurValues/OurValues";
 import Leadership from "@/components/AboutPage/Leadership/Leadership";
+import Committees from "@/components/AboutPage/Committees/Committees";
 import Approach from "@/components/AboutPage/Approach/Approach";
 // import Milestones from "@/components/AboutPage/Milestones/Milestones";
 
@@ -15,6 +16,7 @@ export default function AboutPage() {
       <Mission />
       <OurValues />
       <Leadership />
+      <Committees />
       <Approach />  
     </>
   );

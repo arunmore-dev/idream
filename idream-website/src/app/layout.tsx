@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>
+      <body className="w-full max-w-full overflow-x-hidden">
         <Header />
 
-        <main>{children}</main>
+        <main className="w-full overflow-x-hidden">{children}</main>
 
         <Footer />
       </body>

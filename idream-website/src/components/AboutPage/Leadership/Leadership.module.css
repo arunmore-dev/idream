@@ -26,7 +26,6 @@
 
 .title {
   font-family: 'Inter', sans-serif;
-  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 24px;
   line-height: 100%;
@@ -45,11 +44,10 @@
   width: 100%;
   max-width: 938px;
   font-family: 'Inter', sans-serif;
-  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
-  color: rgba(0, 0, 0, 1);
+  color: #000000;
   margin: 0;
 }
 
@@ -78,7 +76,7 @@
 
 .activeTab {
   font-weight: 600;
-  color: rgba(0, 0, 0, 1);
+  color: #000000;
   background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
@@ -95,17 +93,19 @@
   grid-template-columns: 1fr;
   gap: 24px;
   width: 100%;
+  justify-items: center;
 }
 
-/* Card Scaffold and Overlays */
+/* Card Scaffold & Precise Figma Layout (351px x 559px) */
 .cardContainer {
   position: relative;
   width: 100%;
-  max-width: 363px;
-  height: 560px;
+  max-width: 351px;
+  height: 559px;
   background: #ffffff;
   overflow: hidden;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .mainCardContent {
@@ -113,32 +113,37 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .imageFrame {
   position: relative;
   width: 100%;
-  height: 468px;
-  background: rgba(228, 228, 231, 1);
+  flex: 1;
+  background: #E4E4E7;
+  overflow: hidden;
 }
 
 .avatar {
   object-fit: cover;
 }
 
+/* Bottom Card Footer with Figma properties: Padding 20px & space-between */
 .cardFooter {
-  height: 92px;
+  width: 100%;
   box-sizing: border-box;
-  padding: 16px 4px;
-  display: flex;
+  padding: 20px 0px;
+  display: flex;  
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  background: #ffffff;
+  border-bottom: 1px solid #141414; /* Clean lower border line from design */
 }
 
 .metaTexts {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .badgeLabel {
@@ -148,7 +153,10 @@
   line-height: 100%;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: rgba(102, 102, 96, 1);
+  color: #666660;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .memberName {
@@ -156,8 +164,8 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
-  color: rgba(20, 20, 20, 1);
-  margin: 2px 0;
+  color: #141414;
+  margin: 0;
 }
 
 .memberRole {
@@ -165,22 +173,28 @@
   font-weight: 400;
   font-size: 13px;
   line-height: 100%;
-  color: rgba(102, 102, 96, 1);
+  color: #666660;
 }
 
 .actionBtn {
   width: 32px;
   height: 32px;
-  background: rgba(163, 184, 50, 1);
+  background: #A3B832;
   border: none;
   border-radius: 4px;
   color: #ffffff;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.actionBtn:hover {
+  opacity: 0.9;
 }
 
 /* Sliding Information Card Sheet */
@@ -190,9 +204,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(239, 247, 255, 1);
+  background: #EFF7FF;
   box-sizing: border-box;
-  padding: 32px 24px;
+  padding: 32px 24px 16px 24px;
   display: flex;
   flex-direction: column;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -208,6 +222,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .overlayPartnerBadge {
@@ -217,7 +232,7 @@
   line-height: 13.5px;
   letter-spacing: 0.9px;
   text-transform: uppercase;
-  color: rgba(216, 131, 115, 1);
+  color: #D88373;
   display: flex;
   align-items: center;
 }
@@ -232,7 +247,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: rgba(6, 37, 126, 1);
+  color: #06257E;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,6 +258,16 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 12px;
+}
+
+.overlayBody::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .overlayName {
@@ -250,7 +275,7 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 110%;
-  color: rgba(6, 37, 126, 1);
+  color: #06257E;
   margin: 0 0 10px 0;
 }
 
@@ -269,64 +294,46 @@
   padding: 4px 6px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 11px;
   line-height: 16.5px;
-  letter-spacing: 0px;
   color: #ffffff;
-  background: rgba(189, 30, 30, 1);
+  background: #BD1E1E;
   border-radius: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: inset 1.39px 1.39px 2.79px rgba(43, 43, 43, 0.13);
 }
-   
+
 .overlayBioText {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
-  color: rgba(0, 0, 0, 1);
+  color: #000000;
   margin: 0;
-  
-  /* Allows text to scroll on space-constrained mobile viewports */
-  overflow-y: auto;
-  scrollbar-width: none; /* Modern Firefox support to hide bars */
-  -ms-overflow-style: none; /* Internet Explorer/Edge */
 }
 
-/* Completely removes scroll lines in WebKit engines (Chrome/Safari/Mobile views) */
-.overlayBioText::-webkit-scrollbar {
-  display: none;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent;
-}
-
-/* Footer Tag List distributed with clean fixed gap */
 .overlayFooterTags {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 3px 9px;
-  margin-top: auto; 
-  padding-top: 16px; /* Added gap buffer specifically for mobile views */
-  padding-bottom: 8px;
-  background: rgba(239, 247, 255, 1); /* Keeps footer clean and opaque */
+  padding: 8px 9px 4px 9px;
+  flex-shrink: 0;
+  background: #EFF7FF;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footerTagItem {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 12px;
   line-height: 100%;
   letter-spacing: 1px;
-  color: rgba(159, 159, 169, 1);
+  color: #9F9FA9;
 }
 
-/* --- Tablets & Large Desktops Adaptation --- */
+/* --- Responsive Breakpoints --- */
 @media (min-width: 1024px) {
   .leadershipSection {
     padding: 100px 100px;
@@ -349,11 +356,13 @@
     gap: 24px;
   }
 
-  .overlayBioText {
-    overflow: hidden; /* Preserves desktop behavior exactly as requested */
+  .overlayBody {
+    overflow: hidden;
+    padding-bottom: 0;
   }
 
   .overlayFooterTags {
-    padding-top: 0px; 
+    border-top: none;
+    padding: 3px 9px;
   }
 }

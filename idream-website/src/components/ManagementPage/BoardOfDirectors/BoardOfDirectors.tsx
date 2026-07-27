@@ -80,42 +80,40 @@ const directorsData: Director[] = [
 export default function BoardOfDirectors() {
   return (
     <section className={styles.boardSection}>
-      <div className={styles.container}>
-        {/* Header Block */}
-        <div className={styles.headerBox}>
-          <span className={styles.tagline}>BOARD OF DIRECTORS</span>
-          <h2 className={styles.heading}>Board of Directors</h2>
-          <p className={styles.subheading}>
-            A diverse board combining deep industry expertise with independent governance oversight.
-          </p>
-        </div>
+      {/* Header Block */}
+      <div className={styles.headerBox}>
+        <span className={styles.tagline}>BOARD OF DIRECTORS</span>
+        <h2 className={styles.heading}>Board of Directors</h2>
+        <p className={styles.subheading}>
+          A diverse board combining deep industry expertise with independent governance oversight.
+        </p>
+      </div>
 
-        {/* Cards Grid Container */}
-        <div className={styles.gridContainer}>
-          {directorsData.map((director, index) => (
-            <div key={index} className={styles.card}>
-              {/* Top Row: Avatar Icon & Tag Badge */}
-              <div className={styles.cardHeader}>
-                <div 
-                  className={styles.avatar} 
-                  style={{ backgroundColor: director.avatarBg }}
-                >
-                  {director.initials}
-                </div>
-                <span className={`${styles.badge} ${styles[director.badgeType]}`}>
-                  {director.badgeText}
-                </span>
+      {/* Cards Grid Container */}
+      <div className={styles.gridContainer}>
+        {directorsData.map((director, index) => (
+          <div key={index} className={styles.card}>
+            {/* Top Row: Avatar Icon & Tag Badge */}
+            <div className={styles.cardHeader}>
+              <div 
+                className={styles.avatar} 
+                style={{ backgroundColor: director.avatarBg }}
+              >
+                {director.initials}
               </div>
-
-              {/* Text Info */}
-              <div className={styles.cardBody}>
-                <h3 className={styles.directorName}>{director.name}</h3>
-                <p className={styles.directorRole}>{director.role}</p>
-                <p className={styles.directorDesc}>{director.description}</p>
-              </div>
+              <span className={`${styles.badge} ${styles[director.badgeType]}`}>
+                {director.badgeText}
+              </span>
             </div>
-          ))}
-        </div>
+
+            {/* Text Info */}
+            <div className={styles.cardBody}>
+              <h3 className={styles.directorName}>{director.name}</h3>
+              <p className={styles.directorRole}>{director.role}</p>
+              <p className={styles.directorDesc}>{director.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

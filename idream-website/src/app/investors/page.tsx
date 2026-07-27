@@ -4,8 +4,8 @@ import AnnualReports from "@/components/InvestorsPage/AnnualReports/AnnualReport
 import FinancialResults from "@/components/InvestorsPage/FinancialResults/FinancialResults";
 import CorporateGovernance from "@/components/InvestorsPage/CorporateGovernance/CorporateGovernance";
 import ShareholdingPattern from "@/components/InvestorsPage/ShareholdingPattern/ShareholdingPattern";
-// import StockExchange from "@/components/InvestorsPage/StockExchange/StockExchange";
-// import InvestorContact from "@/components/InvestorsPage/InvestorContact/InvestorContact";
+import StockExchange from "@/components/InvestorsPage/StockExchange/StockExchange";
+import InvestorContact from "@/components/InvestorsPage/InvestorContact/InvestorContact";
 
 export default function InvestorsPage() {
   return (
@@ -16,8 +16,8 @@ export default function InvestorsPage() {
       <FinancialResults />
       <CorporateGovernance />
       <ShareholdingPattern />
-      {/* <StockExchange />
-      <InvestorContact /> */}
+      <StockExchange />
+      <InvestorContact />
     </>
   );
 }

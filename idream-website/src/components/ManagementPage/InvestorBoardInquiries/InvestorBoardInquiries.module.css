@@ -2,37 +2,29 @@
 .inquiriesSection {
   background-color: #0F192E;
   width: 100%;
-  padding: 120px 200px;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-/* Horizontal space-between container (Max 1328px) */
-.container {
-  width: 100%;
-  max-width: 1328px;
+  padding: 100px 200px; /* Aligned with upper sections */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 80px;
+  box-sizing: border-box;
 }
 
-/* Left Box (Fixed 700px width according to Figma) */
+/* Left Box */
 .leftBox {
   width: 100%;
   max-width: 700px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 32px;
 }
 
 .headerGroup {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -48,9 +40,9 @@
 
 .heading {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 48px;
-  line-height: 100%;
+  line-height: 110%;
   letter-spacing: 0px;
   color: #FFFFFF;
   margin: 0;
@@ -60,7 +52,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 140%;
   letter-spacing: 0px;
   color: #F3E8FF;
   margin: 0;
@@ -75,9 +67,9 @@
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 100%;
-  padding: 20px 40px;
+  padding: 18px 36px;
   border-radius: 100px;
   text-decoration: none;
   cursor: pointer;
@@ -89,7 +81,7 @@
   transform: translateY(-2px);
 }
 
-/* Right Side Card (#1A2A4A background, 550px fixed width) */
+/* Right Side Card (#1A2A4A background, 550px fixed max-width) */
 .card {
   background-color: #1A2A4A;
   border: 1px solid rgba(255, 255, 255, 0.0784);
@@ -106,22 +98,24 @@
 .officerTag {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 100%;
   color: #FF0000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .personDetails {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .personName {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 32px;
-  line-height: 100%;
+  font-size: 30px;
+  line-height: 120%;
   color: #FFFFFF;
   margin: 0;
 }
@@ -130,7 +124,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 100%;
+  line-height: 130%;
   color: #F3E8FF;
   margin: 0;
 }
@@ -167,27 +161,13 @@
 }
 
 /* ==========================================
-   Responsive Breakpoints
+   Responsive Breakpoints (Matching upper sections)
    ========================================== */
 
-/* Laptop / Small Desktop (1200px - 1440px) */
-@media (max-width: 1400px) {
-  .inquiriesSection {
-    padding: 100px 80px;
-  }
-
-  .container {
-    gap: 40px;
-  }
-}
-
-/* Tablet (768px - 1024px) */
+/* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
   .inquiriesSection {
-    padding: 80px 40px;
-  }
-
-  .container {
+    padding: 60px 48px;
     flex-direction: column;
     align-items: stretch;
     gap: 48px;
@@ -206,13 +186,10 @@
   }
 }
 
-/* Mobile Devices (Under 768px) */
+/* Mobile Devices */
 @media (max-width: 768px) {
   .inquiriesSection {
-    padding: 40px 20px;
-  }
-
-  .container {
+    padding: 40px 24px;
     gap: 40px;
   }
 
@@ -227,7 +204,7 @@
 
   .contactBtn {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     padding: 16px 24px;
   }
 
@@ -238,7 +215,7 @@
   }
 
   .officerTag {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .personName {

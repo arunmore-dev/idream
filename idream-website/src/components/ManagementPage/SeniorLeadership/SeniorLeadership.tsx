@@ -43,26 +43,24 @@ const leadersData: LeaderMember[] = [
 export default function SeniorLeadership() {
   return (
     <section className={styles.leadershipSection}>
-      <div className={styles.container}>
-        {/* Header Block */}
-        <div className={styles.headerBox}>
-          <span className={styles.tagline}>LEADERSHIP TEAM</span>
-          <h2 className={styles.heading}>Senior Leadership</h2>
-          <p className={styles.subheading}>
-            Functional heads driving excellence across all business verticals.
-          </p>
-        </div>
+      {/* Header Block */}
+      <div className={styles.headerBox}>
+        <span className={styles.tagline}>LEADERSHIP TEAM</span>
+        <h2 className={styles.heading}>Senior Leadership</h2>
+        <p className={styles.subheading}>
+          Functional heads driving excellence across all business verticals.
+        </p>
+      </div>
 
-        {/* 3-Column Grid Container */}
-        <div className={styles.gridContainer}>
-          {leadersData.map((leader, index) => (
-            <div key={index} className={styles.card}>
-              <h3 className={styles.leaderName}>{leader.name}</h3>
-              <p className={styles.leaderRole}>{leader.role}</p>
-              <p className={styles.leaderDesc}>{leader.description}</p>
-            </div>
-          ))}
-        </div>
+      {/* 3-Column Grid Container */}
+      <div className={styles.gridContainer}>
+        {leadersData.map((leader, index) => (
+          <div key={index} className={styles.card}>
+            <h3 className={styles.leaderName}>{leader.name}</h3>
+            <p className={styles.leaderRole}>{leader.role}</p>
+            <p className={styles.leaderDesc}>{leader.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

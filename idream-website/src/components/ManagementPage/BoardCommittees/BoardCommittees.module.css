@@ -2,25 +2,20 @@
 .committeesSection {
   background-color: #0F192E;
   width: 100%;
-  padding: 120px 200px;
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.container {
-  width: 100%;
-  max-width: 1328px;
+  padding: 100px 200px; /* Aligned with upper sections */
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 64px;
+  box-sizing: border-box;
 }
 
 /* Header Styles */
 .headerBox {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
+  max-width: 869px;
   width: 100%;
 }
 
@@ -36,9 +31,9 @@
 
 .heading {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 48px;
-  line-height: 100%;
+  line-height: 110%;
   color: #FFFFFF;
   margin: 0;
 }
@@ -47,7 +42,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 140%;
   color: #F3E8FF; /* Light tint for subheading contrast */
   margin: 0;
 }
@@ -75,9 +70,9 @@
 
 .cardTitle {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 100%;
+  line-height: 120%;
   color: #FFFFFF;
   margin: 0;
 }
@@ -114,7 +109,7 @@
   font-size: 12px;
   line-height: 100%;
   text-transform: uppercase;
-  color: #4A5565;
+  color: #8896AB; /* Lightened grey for better readability on dark background */
 }
 
 /* Values Typography */
@@ -122,7 +117,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 18px;
-  line-height: 100%;
+  line-height: 120%;
   color: #FFFFFF;
   margin: 0;
 }
@@ -131,7 +126,7 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 140%;
   color: #F3E8FF;
   margin: 0;
 }
@@ -155,20 +150,13 @@
 }
 
 /* ==========================================
-   Responsive Breakpoints
+   Responsive Breakpoints (Matching upper sections)
    ========================================== */
 
-/* Laptop Screens (1200px - 1440px) */
-@media (max-width: 1400px) {
-  .committeesSection {
-    padding: 100px 80px;
-  }
-}
-
-/* Tablet Screens (768px - 1024px) */
+/* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
   .committeesSection {
-    padding: 80px 40px;
+    padding: 60px 48px;
   }
 
   .card {
@@ -181,13 +169,10 @@
   }
 }
 
-/* Mobile Devices (Under 768px) */
+/* Mobile Devices */
 @media (max-width: 768px) {
   .committeesSection {
-    padding: 40px 20px;
-  }
-
-  .container {
+    padding: 40px 24px;
     gap: 40px;
   }
 

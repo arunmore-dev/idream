@@ -19,34 +19,34 @@ export default function Leadership() {
   const boardMembers: TeamMember[] = [
     {
       name: "Maya Chen",
-      role: "Chief Executive Officer",
-      badge: "Partner",
+      role: "Founder & CEO",
+      badge: "PARTNER",
       tags: ["Founder", "CEO", "Partner"],
-      bio: "Maya leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
+      bio: "Maya leads IDREAM's design practice with a belief that great design is first an act of listening. Her work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture.",
       image: "/images/team1.png"
     },
     {
       name: "Julian Rev",
       role: "Chief Financial Officer",
-      badge: "Partner",
-      tags: ["Founder", "CEO", "Partner"],
-      bio: "Julian leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
+      badge: "PARTNER",
+      tags: ["Founder", "CFO", "Partner"],
+      bio: "Julian oversees economic strategies and long-term financial health, structuring growth initiatives for global market operations across all practice areas.",
       image: "/images/team2.png"
     },
     {
       name: "Emily Harper",
       role: "Creative Lead",
-      badge: "Partner",
-      tags: ["Founder", "CEO", "Partner"],
-      bio: "Emily leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
+      badge: "PARTNER",
+      tags: ["Creative", "Design", "Partner"],
+      bio: "Emily leads visual systems and experience design projects, turning strategic principles into tangible identity programs for high-growth enterprises.",
       image: "/images/team3.png"
     },
     {
       name: "Roman Hoff",
       role: "Purchase Head",
-      badge: "Partner",
-      tags: ["Founder", "CEO", "Partner"],
-      bio: "Roman leads IDREAM's design practice with a belief that great design is first an act of listening. His work spans identity systems, digital products, and spatial experiences for clients across fintech, healthcare, and culture. Previously Creative Director at Pentagram London, James brings a rare synthesis of conceptual clarity and meticulous craft.",
+      badge: "PARTNER",
+      tags: ["Procurement", "Operations", "Partner"],
+      bio: "Roman manages strategic purchasing, vendor alignments, and material procurement pipelines to ensure efficient operational performance.",
       image: "/images/team4.png"
     }
   ];
@@ -55,7 +55,7 @@ export default function Leadership() {
     {
       name: "Alex Patel",
       role: "Operations Director",
-      badge: "Executive",
+      badge: "EXECUTIVE",
       tags: ["Operations", "Management"],
       bio: "Alex anchors product delivery and internal engineering operations methodologies, verifying benchmark outputs across teams.",
       image: "/images/team5.png"
@@ -75,7 +75,7 @@ export default function Leadership() {
         {/* Header Block Row */}
         <div className={styles.headerBlock}>
           <div className={styles.titleColumn}>
-            <h2 className={styles.title}>{"// Our Leadership"}</h2>
+            <h2 className={styles.title}>{"// OUR LEADERSHIP"}</h2>
           </div>
           <p className={styles.description}>
             {"Our team comprises seasoned professionals with deep expertise in design, strategy, and innovation. Meet the people committed to delivering exceptional results for every client we serve."}
@@ -106,21 +106,25 @@ export default function Leadership() {
             return (
               <div key={index} className={styles.cardContainer}>
                 
-                {/* Standard Team Display view state */}
+                {/* Standard Team Display View */}
                 <div className={styles.mainCardContent}>
                   <div className={styles.imageFrame}>
                     <Image 
                       src={member.image} 
                       alt={member.name} 
                       fill
-                      sizes="(max-width: 1024px) 100vw, 363px"
+                      sizes="(max-width: 1024px) 100vw, 351px"
                       className={styles.avatar} 
+                      priority
                     />
                   </div>
                   
+                  {/* Footer area matching Figma Specs: 20px padding & space-between layout */}
                   <div className={styles.cardFooter}>
                     <div className={styles.metaTexts}>
-                      <span className={styles.badgeLabel}>{"● " + member.badge}</span>
+                      <span className={styles.badgeLabel}>
+                        {"● " + member.badge}
+                      </span>
                       <h4 className={styles.memberName}>{member.name}</h4>
                       <span className={styles.memberRole}>{member.role}</span>
                     </div>
@@ -156,7 +160,7 @@ export default function Leadership() {
                     <p className={styles.overlayBioText}>{member.bio}</p>
                   </div>
 
-                  {/* Horizontal listed bottom tags row */}
+                  {/* Horizontal Listed Tags Row */}
                   <div className={styles.overlayFooterTags}>
                     {member.tags.map((tag, tIdx) => (
                       <span key={tIdx} className={styles.footerTagItem}>{tag}</span>

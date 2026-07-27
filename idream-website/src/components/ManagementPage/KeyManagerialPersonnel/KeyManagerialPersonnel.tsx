@@ -8,7 +8,7 @@ interface KmpMember {
   role: string;
   description: string;
   appointedDate: string;
-  metaId: string; // DIN, PAN, or Membership No.
+  metaId: string;
 }
 
 const kmpData: KmpMember[] = [
@@ -44,51 +44,52 @@ const kmpData: KmpMember[] = [
 export default function KeyManagerialPersonnel() {
   return (
     <section className={styles.kmpSection}>
-      <div className={styles.container}>
-        {/* Header Section */}
-        <div className={styles.headerBox}>
-          <span className={styles.tagline}>KMP</span>
-          <h2 className={styles.heading}>Key Managerial Personnel</h2>
-          <p className={styles.subheading}>
-            Statutory officers of the company as required under the Companies Act, 2013.
-          </p>
-        </div>
+      {/* Header Section */}
+      <div className={styles.headerBox}>
+        <span className={styles.tagline}>KMP</span>
+        <h2 className={styles.heading}>Key Managerial Personnel</h2>
+        <p className={styles.subheading}>
+          Statutory officers of the company as required under the Companies Act, 2013.
+        </p>
+      </div>
 
-        {/* List Cards Container */}
-        <div className={styles.listContainer}>
-          {kmpData.map((member, index) => (
-            <div key={index} className={styles.card}>
-              {/* Left Side: Avatar Icon */}
-              <div 
-                className={styles.avatar} 
-                style={{ backgroundColor: member.avatarBg }}
-              >
-                {member.initials}
+      {/* List Cards Container */}
+      <div className={styles.listContainer}>
+        {kmpData.map((member, index) => (
+          <div key={index} className={styles.card}>
+            {/* Left Side: Avatar Icon */}
+            <div 
+              className={styles.avatar} 
+              style={{ backgroundColor: member.avatarBg }}
+            >
+              {member.initials}
+            </div>
+
+            {/* Right Side: Detailed Info Content */}
+            <div className={styles.cardContent}>
+              {/* Top Row: Name/Role & Appointment Info */}
+              <div className={styles.topRow}>
+                <div className={styles.nameRoleBox}>
+                  <h3 className={styles.memberName}>{member.name}</h3>
+                  <p className={styles.memberRole}>{member.role}</p>
+                </div>
+                <div className={styles.appointedBox}>
+                  <span className={styles.appointedLabel}>APPOINTED</span>
+                  <span className={styles.appointedDate}>{member.appointedDate}</span>
+                </div>
               </div>
 
-              {/* Right Side: Detailed Info Content */}
-              <div className={styles.cardContent}>
-                {/* Top Row: Name/Role & Appointment Info */}
-                <div className={styles.topRow}>
-                  <div className={styles.nameRoleBox}>
-                    <h3 className={styles.memberName}>{member.name}</h3>
-                    <p className={styles.memberRole}>{member.role}</p>
-                  </div>
-                  <div className={styles.appointedBox}>
-                    <span className={styles.appointedLabel}>APPOINTED</span>
-                    <span className={styles.appointedDate}>{member.appointedDate}</span>
-                  </div>
-                </div>
+              {/* Horizontal Divider Line */}
+              <div className={styles.divider} />
 
-                {/* Bottom Row: Description & Meta ID (DIN/PAN/Membership) */}
-                <div className={styles.bottomRow}>
-                  <p className={styles.description}>{member.description}</p>
-                  <span className={styles.metaId}>{member.metaId}</span>
-                </div>
+              {/* Bottom Row: Description & Meta ID */}
+              <div className={styles.bottomRow}>
+                <p className={styles.description}>{member.description}</p>
+                <span className={styles.metaId}>{member.metaId}</span>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
