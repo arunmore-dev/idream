@@ -4,9 +4,11 @@
 }
 
 .container {
-  max-width: 1800px; /* Based on Figma structural box width */
+  width: 100%;
+  max-width: 1728px; /* Match Header max-width for monitor alignment */
   margin: 0 auto;
-  padding: 0 100px; /* Left/Right layout rules from design file */
+  padding: 0 64px;
+  box-sizing: border-box;
 }
 
 .heading {
@@ -20,7 +22,7 @@
 }
 
 .underline {
-  width: 96px; /* Matched to Figma dimensions 96px x 4px */
+  width: 96px;
   height: 4px;
   background: linear-gradient(90deg, rgba(6, 37, 126, 1) 0%, rgba(189, 30, 30, 1) 100%);
   margin: 0 auto 20px;
@@ -40,17 +42,16 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 80px; /* Explicit gap spacing parameter assigned in layout specs */
+  gap: 80px;
   margin-top: 24px;
   margin-bottom: 48px;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 40px; /* Radius configuration specified on properties panel */
+  border-radius: 40px;
   overflow: hidden;
   border: 1px solid rgba(239, 239, 239, 1);
-  /* Compound shadow layers rendered perfectly across desktop layouts */
   box-shadow: 
     0px 1.96px 4.4px 0px rgba(27, 29, 28, 0.14),
     0px 8.31px 8.31px 0px rgba(27, 29, 28, 0.1),
@@ -61,7 +62,7 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  height: 408px; /* Box aspect metric extracted from layout layout dimensions */
+  height: 408px;
 }
 
 .image {
@@ -72,7 +73,7 @@
 
 .cardBody {
   padding: 40px;
-  min-height: 334px; /* Perfectly balances content variables to keep card grid consistent */
+  min-height: 334px;
 }
 
 .titleRow {
@@ -106,14 +107,14 @@
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 24px;
-  line-height: 140%; /* Balanced line height for structural text readability */
+  line-height: 140%;
   color: rgba(74, 85, 101, 1);
   margin-bottom: 32px;
 }
 
 .featureList {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Splits lists neatly inside 2 columns */
+  grid-template-columns: repeat(2, 1fr);
   row-gap: 20px;
   column-gap: 40px;
   padding: 0;
@@ -132,7 +133,6 @@
   color: rgba(54, 65, 83, 1);
 }
 
-/* Custom CSS circular blue dots tracking design requirements */
 .dot {
   width: 10px;
   height: 10px;
@@ -180,7 +180,15 @@
     inset 0px 1px 1px rgba(255,255,255,0.08);
 }
 
-/* Fluid responsive breakdown to single-column blocks on tablet/mobile */
+/* ================= RESPONSIVE FIXES ================= */
+
+/* CHANGED: Target .container instead of non-existent .content */
+@media (max-width: 1600px) {
+  .container {
+    padding: 0 64px;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 40px;
@@ -210,7 +218,6 @@
     padding: 0 24px;
   }
   
-  /* Ek ke niche ek cards pure spacing ke sath (No slider, no dots) */
   .grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -218,7 +225,7 @@
   }
   
   .imageWrap {
-    height: 250px; /* Mobile responsive compact image height */
+    height: 250px;
   }
   
   .cardBody {
@@ -235,7 +242,6 @@
     margin-bottom: 24px;
   }
   
-  /* Blue dots features display beautifully as single item rows on mobile */
   .featureList {
     grid-template-columns: 1fr;
     row-gap: 16px;

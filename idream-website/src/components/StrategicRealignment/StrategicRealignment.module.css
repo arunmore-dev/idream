@@ -5,6 +5,7 @@
   overflow-x: hidden; /* Safeguards mobile horizontal scroll leakage */
 }
 
+/* CHANGED: max-width 1800px -> 1728px (Header se align karne ke liye) */
 .container {
   max-width: 1800px;
   margin: 0 auto;
@@ -217,10 +218,21 @@
   display: none;
 }
 
+/* ================= RESPONSIVE ADJUSTMENTS ================= */
+
+/* CHANGED: Replaced non-existent .content class with .container */
+@media (max-width: 1600px) {
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
 /* Tablet Media Handling Breakpoint */
 @media (max-width: 1200px) {
   .container {
-    padding: 0 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .grid {
     grid-template-columns: 1fr;
@@ -234,7 +246,8 @@
     padding: 48px 0;
   }
   .container {
-    padding: 0 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
   
   .mainHeading {
@@ -284,14 +297,13 @@
     margin-top: 24px;
   }
 
-  /* FIX: Added safe inline padding inside viewport container */
+  /* Safe inline padding inside viewport container */
   .sliderClip {
     width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    /* Yeh padding left aur right side ki cut hone wali borders ko protect karegi */
     padding: 4px 16px; 
     box-sizing: border-box;
     margin-left: -16px;
@@ -306,16 +318,14 @@
   .sliderTrack {
     display: flex;
     flex-direction: row;
-    gap: 16px; /* Perfect spacing to separate the cards */
+    gap: 16px;
     width: max-content;
   }
 
-  /* FIX: Perfectly calculated width using viewport offset to avoid right border clipping */
   .item {
-    /* 100vw minus left/right margins and gap ratios prevents clipping beautifully */
     flex: 0 0 calc(100vw - 48px); 
     width: calc(100vw - 48px);
-    scroll-snap-align: center; /* Center snapping gives smooth safe margins on both ends */
+    scroll-snap-align: center;
     box-sizing: border-box;
     min-height: 150px;
     height: auto;

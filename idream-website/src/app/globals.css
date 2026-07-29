@@ -23,7 +23,7 @@
   --grey-600: #6b7280;
   --grey-800: #374151;
   --text-dark: #1a1a2e;
-  --container-max: 1280px;
+  --container-max: 1600px;
   --section-padding: 80px;
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -34,11 +34,10 @@
   --transition: 0.3s ease;
 }
 
-/* Hard reset for width and overflow */
+/* Prevent horizontal scrollbar glitches across all monitors */
 html,
 body {
   width: 100%;
-  max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden !important;
   margin: 0;
@@ -106,19 +105,34 @@ textarea {
   font-weight: 400;
 }
 
-/* ================= UNIFIED CONTAINER CLASS ================= */
-/* Use this class inside your components to keep all page sections aligned */
+/* ================= UNIFIED GLOBAL CONTAINER ================= */
 .container {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 1600px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 64px;
+  padding-right: 64px;
   box-sizing: border-box;
 }
 
-@media (min-width: 1536px) {
+@media (max-width: 1440px) {
   .container {
-    max-width: 1400px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }

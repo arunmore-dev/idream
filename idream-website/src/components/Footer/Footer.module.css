@@ -2,12 +2,16 @@
   width: 100%;
   background: #101828;
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
+/* CHANGED: max-width 1800px -> 1728px (Site-wide layout standardization) */
 .container {
   max-width: 1800px;
   margin: 0 auto;
   padding: 64px 100px 33px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* ================= TOP ================= */
@@ -16,8 +20,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 140px;
+  gap: 60px;
   padding-bottom: 52px;
+  width: 100%;
 }
 
 /* ---------- Left ---------- */
@@ -39,7 +44,8 @@
 
 .description {
   margin-top: 16px;
-  width: 270px;
+  width: 100%;
+  max-width: 280px;
   color: #99a1af;
   font-size: 14px;
   line-height: 20px;
@@ -48,20 +54,22 @@
 
 /* ---------- Right ---------- */
 
+/* CHANGED: Replaced rigid 250px gap with fluid space-between alignment */
 .linksGrid {
   flex: 1;
   display: flex;
-  justify-content: flex-start; 
+  justify-content: space-between; 
   align-items: flex-start;
-  gap: 250px; 
+  gap: 32px; 
+  max-width: 900px;
 }
 
 .linkColumn {
-  width: 180px; 
+  min-width: 140px; 
 }
 
 .contactColumn {
-  width: 240px; 
+  min-width: 220px; 
 }
 
 .columnTitle {
@@ -82,7 +90,7 @@
 
 .linkList li,
 .contactList li {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .linkList li:last-child,
@@ -96,12 +104,12 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
-  transition: 0.2s;
+  line-height: 20px;
+  transition: color 0.2s ease;
 }
 
 .footerLink:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .contactItem {
@@ -114,6 +122,8 @@
   flex-shrink: 0;
   width: 18px;
   height: 18px;
+  object-fit: contain;
+  margin-top: 1px;
 }
 
 /* ================= Bottom ================= */
@@ -121,12 +131,15 @@
 .bottom {
   border-top: 1px solid #1e2939;
   padding-top: 32px;
+  width: 100%;
 }
 
 .bottomRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .copyright {
@@ -138,7 +151,8 @@
 
 .legalLinks {
   display: flex;
-  gap: 40px;
+  gap: 32px;
+  align-items: center;
 }
 
 .legalLink {
@@ -146,24 +160,32 @@
   text-decoration: none;
   font-size: 14px;
   line-height: 20px;
+  transition: color 0.2s ease;
 }
 
 .legalLink:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .bseInfo {
   margin-top: 18px;
   color: #6a7282;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
 }
 
 /* ================= Responsive Overrides ================= */
 
+/* ADDED: Laptop Breakpoint Alignment */
+@media (max-width: 1600px) {
+  .container {
+    padding: 64px 64px 33px;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
-    padding: 64px 40px 33px;
+    padding: 64px 32px 33px;
   }
   .top {
     flex-direction: column;
@@ -171,14 +193,15 @@
   }
   .linksGrid {
     width: 100%;
+    max-width: 100%;
     justify-content: space-between;
-    gap: 40px;
+    gap: 32px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 48px 24px 32px;
+    padding: 48px 20px 32px;
   }
   .top {
     gap: 36px;
@@ -188,20 +211,21 @@
     width: 100%;
   }
   .logoImg {
-    width: 220px; /* Adapts logo container safely for smaller mobile viewports */
+    width: 220px;
   }
   .description {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
     margin-top: 12px;
   }
   .linksGrid {
     flex-direction: column;
-    gap: 36px;
+    gap: 32px;
   }
   .linkColumn, 
   .contactColumn {
     width: 100%;
+    min-width: 0;
   }
   .columnTitle {
     margin-bottom: 14px;
@@ -213,7 +237,7 @@
   }
   .legalLinks {
     flex-wrap: wrap;
-    gap: 16px 24px;
+    gap: 12px 20px;
   }
   .bseInfo {
     margin-top: 16px;

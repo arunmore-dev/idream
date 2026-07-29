@@ -8,8 +8,8 @@ import styles from "./Header.module.css";
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Business", href: "#services" },
-  { label: "Strategy", href: "#" },
-  { label: "Manegement", href: "/manegement" },
+  { label: "Strategy", href: "#strategy" },
+  { label: "Management", href: "/manegement" },
   { label: "Investors", href: "/investors" },
   { label: "Contact", href: "#contact" },
 ];
@@ -22,7 +22,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link href="#home" className={styles.logoContainer} onClick={handleNavClick}>
+        {/* CHANGED: href="#home" -> href="/" to redirect to root/landing page */}
+        <Link href="/" className={styles.logoContainer} onClick={handleNavClick}>
           <Image 
             src="/images/logo.png" 
             alt="IDREAM Logo"
@@ -35,8 +36,8 @@ export default function Header() {
 
         <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ""}`}>
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {navLinks.map((link, index) => (
+              <li key={`${link.label}-${index}`}>
                 <Link
                   href={link.href}
                   className={styles.navLink}
@@ -47,7 +48,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          {/* Mobile-only CTA container using your exact existing style class */}
+          {/* Mobile-only CTA container */}
           <div className={styles.mobileCtaWrapper}>
             <Link
               href="#contact"
@@ -69,7 +70,7 @@ export default function Header() {
         </Link>
 
         <button
-          className={`${styles.menuToggle} ${menuOpen ? styles.menuOpen : ""}`}
+          className={`${styles.menuToggle} ${menuOpen ? styles.navOpen : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >

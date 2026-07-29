@@ -2,23 +2,28 @@
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 1000;
   width: 100%;
   height: 101px; 
   display: flex;
   align-items: center;
+  justify-content: center;
   background: transparent;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .container {
   width: 100%;
-  max-width: 1670px; 
-  margin: 0 auto;
-  padding: 0 24px;
+  max-width: 1600px; 
+  max-width: 1728px; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 64px;
+  padding-right: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between; 
+  box-sizing: border-box;
 }
 
 .logoContainer {
@@ -34,6 +39,7 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex: 1;
   margin-right: 32px; 
 }
@@ -57,6 +63,7 @@
   text-decoration: none;
   transition: color 0.2s ease;
   display: inline-block;
+  white-space: nowrap;
 }
 
 .navLink:hover {
@@ -94,7 +101,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  background: linear-gradient(135deg, #3b5998, #bd1e1e); /* Gives a stylized button background similar to the screenshot wrapper layout */
+  background: linear-gradient(135deg, #3b5998, #bd1e1e);
   border: none;
   padding: 8px;
   border-radius: 8px;
@@ -106,7 +113,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: #ffffff; /* White bars to pop against the blue/red toggle button */
+  background: #ffffff;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -126,19 +133,39 @@
   display: none;
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA INJECTIONS
-   ========================================================================== */
+/* ================= RESPONSIVE INJECTIONS ================= */
+
+@media (max-width: 1440px) {
+  .container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .navList {
+    gap: 24px;
+  }
+}
 
 @media (max-width: 1024px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
   .navList {
-    gap: 20px;
+    gap: 16px;
+  }
+  .navLink {
+    font-size: 15px;
   }
 }
 
 @media (max-width: 768px) {
   .header {
     height: 75px;
+  }
+
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .menuToggle {
@@ -182,6 +209,7 @@
   .navLink {
     width: 100%;
     display: block;
+    font-size: 16px;
   }
 
   .mobileCtaWrapper {
@@ -193,7 +221,8 @@
 
 @media (max-width: 360px) {
   .container {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .nav {
     width: 240px;

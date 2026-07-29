@@ -155,7 +155,11 @@
   color: rgba(74, 85, 101, 1);
   margin: 0;
 }
-
+@media (max-width:1600px){
+  .container{
+    padding-inline:64px;
+  }
+}
 /* ─── ONLY MOBILE/TABLET RESPONSIVE SWIPING RULES ─── */
 @media (max-width: 991px) {
   .container {

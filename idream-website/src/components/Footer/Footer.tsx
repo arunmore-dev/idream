@@ -10,7 +10,8 @@ export default function Footer() {
         <div className={styles.top}>
           {/* Brand Info */}
           <div className={styles.brand}>
-            <Link href="#home" className={styles.logoWrapper}>
+            {/* CHANGED: href="#home" -> href="/" to redirect to root/landing page */}
+            <Link href="/" className={styles.logoWrapper}>
               <Image 
                 src="/images/Flogo.png" 
                 alt="IDREAM Logo" 
@@ -34,7 +35,7 @@ export default function Footer() {
                 <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
                 <li><Link href="#business-segments" className={styles.footerLink}>Business Segments</Link></li>
                 <li><Link href="#strategy" className={styles.footerLink}>Strategy</Link></li>
-                <li><Link href="/manegement" className={styles.footerLink}>Manegement</Link></li>
+                <li><Link href="/manegement" className={styles.footerLink}>Management</Link></li>
                 <li><Link href="/investors" className={styles.footerLink}>Investor Relations</Link></li>
               </ul>
             </div>

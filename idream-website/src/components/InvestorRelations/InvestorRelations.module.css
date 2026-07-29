@@ -6,8 +6,9 @@
   overflow-x: hidden;
 }
 
+/* CHANGED: max-width 1645px -> 1728px (Header & standard sections se align karne ke liye) */
 .container {
-  max-width: 1645px;
+  max-width: 1700px;
   width: 100%;
   margin: 0 auto;
   padding: 0 40px;
@@ -352,7 +353,15 @@
   opacity: 0.95;
 }
 
-/* RESPONSIVE MEDIA BREAKPOINTS */
+/* ================= RESPONSIVE MEDIA BREAKPOINTS ================= */
+
+/* ADDED: Missing 1600px breakpoint for laptop alignment */
+@media (max-width: 1600px) {
+  .container {
+    padding: 0 64px;
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 32px;
@@ -478,13 +487,13 @@
     display: none;
   }
 
-  /* FIXED ACTIVE LOGIC: Swiper Activation instead of dynamic dot translations */
+  /* Swiper Activation instead of dynamic dot translations */
   .mobileCardsSlider {
     display: block !important;
     width: 100% !important;
   }
 
-  /* FIXED: Safe horizontal mask padding prevents box-shadow cuts */
+  /* Safe horizontal mask padding prevents box-shadow cuts */
   .sliderClip {
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
@@ -529,7 +538,7 @@
     line-height: 40px;
   }
 
-  /* Clean up legacy dot indicators container if any */
+  /* Clean up legacy dot indicators container */
   .dotsContainer {
     display: none !important;
   }
