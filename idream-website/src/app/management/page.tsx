@@ -18,5 +18,5 @@ export default function ManagementPage() {
       <PoliciesAndCodes />
       <InvestorInquiries />
     </main>
-  );
+  );  
 }

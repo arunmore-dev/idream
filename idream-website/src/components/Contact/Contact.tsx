@@ -47,10 +47,50 @@ const socialLinks = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage("");
+
+    const formElement = e.currentTarget; // Store form reference
+    const formData = new FormData(formElement);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        formElement.reset(); // 👈 This automatically clears all inputs!
+
+        // Optional: Reset "Message Sent!" button state after 5 seconds
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        const resData = await response.json();
+        setErrorMessage(resData.error || "Something went wrong.");
+      }
+    } catch (err) {
+      setErrorMessage("Unable to send request. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -126,8 +166,12 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              {submitted ? "Message Sent!" : "Send Message"}
+            {errorMessage && (
+              <p style={{ color: "#bd1e1e", margin: "0" }}>{errorMessage}</p>
+            )}
+
+            <button type="submit" className={styles.submitBtn} disabled={loading}>
+              {loading ? "Sending..." : submitted ? "Message Sent!" : "Send Message"}
             </button>
           </form>
 
