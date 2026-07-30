@@ -50,20 +50,52 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Validation functions
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    if (!phone) return true; // Optional field, but if provided must be valid
+    return /^\+?[0-9\s-]{7,15}$/.test(phone);
+  };
+
+  // Prevent non-numeric characters on keypress for phone
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "+", " "];
+    if (!allowedKeys.includes(e.key) && !/^[0-9]$/.test(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setErrorMessage("");
 
-    const formElement = e.currentTarget; // Store form reference
+    const formElement = e.currentTarget;
     const formData = new FormData(formElement);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
-    };
+    
+    const name = (formData.get("name") as string)?.trim();
+    const email = (formData.get("email") as string)?.trim();
+    const phone = (formData.get("phone") as string)?.trim();
+    const subject = (formData.get("subject") as string)?.trim();
+    const message = (formData.get("message") as string)?.trim();
+
+    // Frontend Validations
+    if (!validateEmail(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
+
+    if (phone && !validatePhone(phone)) {
+      setErrorMessage("Please enter a valid phone number (digits only).");
+      setLoading(false);
+      return;
+    }
+
+    const data = { name, email, phone, subject, message };
 
     try {
       const response = await fetch("/api/contact", {
@@ -76,9 +108,8 @@ export default function Contact() {
 
       if (response.ok) {
         setSubmitted(true);
-        formElement.reset(); // 👈 This automatically clears all inputs!
+        formElement.reset();
 
-        // Optional: Reset "Message Sent!" button state after 5 seconds
         setTimeout(() => {
           setSubmitted(false);
         }, 5000);
@@ -96,8 +127,6 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
-        
-        {/* Top Header Section */}
         <div className={styles.header}>
           <span className={styles.topTag}>CONTACT US</span>
           <h2 className={styles.heading}>Get In Touch</h2>
@@ -108,7 +137,6 @@ export default function Contact() {
         </div>
 
         <div className={styles.grid}>
-          
           {/* Left Column: Form Card */}
           <form className={styles.formCard} onSubmit={handleSubmit}>
             <h3 className={styles.formTitle}>Send Us a Message</h3>
@@ -142,6 +170,7 @@ export default function Contact() {
                 id="phone"
                 name="phone"
                 placeholder="+91 98765 43210"
+                onKeyDown={handlePhoneKeyDown}
               />
             </div>
 
@@ -167,7 +196,9 @@ export default function Contact() {
             </div>
 
             {errorMessage && (
-              <p style={{ color: "#bd1e1e", margin: "0" }}>{errorMessage}</p>
+              <p style={{ color: "#bd1e1e", margin: "0", fontWeight: "500" }}>
+                {errorMessage}
+              </p>
             )}
 
             <button type="submit" className={styles.submitBtn} disabled={loading}>
@@ -175,7 +206,7 @@ export default function Contact() {
             </button>
           </form>
 
-          {/* Right Column: Info & Socials Block */}
+          {/* Right Column: Info Deck */}
           <div className={styles.infoCol}>
             {contactInfo.map((info, idx) => (
               <div key={idx} className={styles.infoCard}>
@@ -191,7 +222,7 @@ export default function Contact() {
               </div>
             ))}
 
-            {/* Social Media CTA Box */}
+            {/* Social Media Card */}
             <div className={styles.socialCard}>
               <h4 className={styles.socialTitle}>Connect With Us</h4>
               <div className={styles.socialIconsRow}>
@@ -208,7 +239,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

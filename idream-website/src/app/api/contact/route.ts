@@ -5,9 +5,27 @@ export async function POST(req: Request) {
   try {
     const { name, email, phone, subject, message } = await req.json();
 
+    // Required fields check
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: "Required fields are missing." },
+        { status: 400 }
+      );
+    }
+
+    // Server-side Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: "Invalid email address format." },
+        { status: 400 }
+      );
+    }
+
+    // Server-side Phone validation (digits only, optional prefix +, length 7-15)
+    if (phone && !/^\+?[0-9\s-]{7,15}$/.test(phone)) {
+      return NextResponse.json(
+        { error: "Invalid phone number format." },
         { status: 400 }
       );
     }
@@ -24,7 +42,6 @@ export async function POST(req: Request) {
 
     const recipient = process.env.CONTACT_RECIPIENT_EMAIL || "arun.more@vselindia.com";
 
-    // Modern Professional HTML Template
     const htmlTemplate = `
       <!DOCTYPE html>
       <html>
