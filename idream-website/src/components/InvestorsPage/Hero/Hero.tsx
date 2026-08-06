@@ -26,12 +26,11 @@ export default function Hero() {
             View Financial Results
           </button>
         </div>
-
       </div>
 
       {/* Stats Bar */}
       <div className={styles.statsBar}>
-        
+
         <div className={styles.statBlock}>
           <h3 className={styles.statValue}>BSE Listed</h3>
           <span className={`${styles.statLabel} ${styles.redLabel}`}>Exchange Listed</span>
