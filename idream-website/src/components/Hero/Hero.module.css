@@ -44,8 +44,9 @@
 
 .heading {
   font-family: 'Inter', sans-serif;
-  font-size: 72px;
+  font-family: 'Inter Bold', Bold;
   font-weight: 700;
+  font-size: 72px;
   color: #ffffff;
   line-height: 1.12;
   letter-spacing: -0.5px;
@@ -63,6 +64,7 @@
 .subtext {
   color: rgba(255, 255, 255, 0.85);
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-size: 20px;
   line-height: 1.45;
   max-width: 720px;
@@ -95,7 +97,8 @@
   text-decoration: none;
   
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-family: 'Inter Semi Bold', SemiBold;
+  font-size: 32px;
   font-weight: 600;
 
   box-shadow:

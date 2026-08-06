@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./InvestorRelations.module.css";
 import Image from "next/image";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 const tabs = ["Overview", "Financial", "News", "Governance"] as const;
 
@@ -80,10 +81,34 @@ const newsItems = [
   },
 ];
 
+// Modern Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const enterpriseRevealVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
 export default function InvestorRelations() {
   const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("Overview");
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  
+
   const content = tabContent[activeTab];
 
   const handleTabSelect = (tab: (typeof tabs)[number]) => {
@@ -96,33 +121,58 @@ export default function InvestorRelations() {
       <div className={styles.container}>
 
         {/* Header Section */}
-        <div className={styles.headerWrapper}>
-          <span className={styles.subTitleText}>INVESTORS</span>
-          <h2 className={styles.mainTitleText}>Investor Relations</h2>
-          <div className={styles.gradientLineTracker}></div>
-          <p className={styles.descriptionText}>
+        <motion.div
+          className={styles.headerWrapper}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <motion.span className={styles.subTitleText} variants={enterpriseRevealVariants}>
+            INVESTORS
+          </motion.span>
+          <motion.h2 className={styles.mainTitleText} variants={enterpriseRevealVariants}>
+            Investor Relations
+          </motion.h2>
+          <motion.div className={styles.gradientLineTracker} variants={enterpriseRevealVariants} />
+          <motion.p className={styles.descriptionText} variants={enterpriseRevealVariants}>
             Committed to transparency and creating long-term stakeholder value
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Desktop Tab Selector Layout */}
-        <div className={styles.tabBarContainer}>
+        <motion.div
+          className={styles.tabBarContainer}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
           <div className={styles.tabGrid}>
             {tabs.map((tab) => (
-              <button
+              <motion.button
                 key={tab}
                 className={`${styles.tabItemButton} ${activeTab === tab ? styles.tabActive : ""}`}
                 onClick={() => handleTabSelect(tab)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
                 {tab}
-              </button>
+              </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Mobile Dropdown Layout */}
-        <div className={styles.mobileDropdownContainer}>
-          <button 
+        <motion.div
+          className={styles.mobileDropdownContainer}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <button
             className={styles.dropdownSelectorTrigger}
             onClick={() => setDropdownOpen(!dropdownOpen)}
             type="button"
@@ -135,36 +185,54 @@ export default function InvestorRelations() {
             </div>
           </button>
 
-          {dropdownOpen && (
-            <div className={styles.dropdownFloatingMenu}>
-              {tabs.map((tab) => (
-                <button
-                  key={`drop-${tab}`}
-                  className={`${styles.dropdownOptionRow} ${activeTab === tab ? styles.optionActive : ""}`}
-                  onClick={() => handleTabSelect(tab)}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+          <AnimatePresence>
+            {dropdownOpen && (
+              <motion.div
+                className={styles.dropdownFloatingMenu}
+                initial={{ opacity: 0, y: -10, scaleY: 0.95 }}
+                animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                exit={{ opacity: 0, y: -10, scaleY: 0.95 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                {tabs.map((tab) => (
+                  <button
+                    key={`drop-${tab}`}
+                    className={`${styles.dropdownOptionRow} ${activeTab === tab ? styles.optionActive : ""}`}
+                    onClick={() => handleTabSelect(tab)}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
 
-        {/* Main Content Content Wrapper Panels */}
+        {/* Main Content Wrapper Panels - ORIGINAL STRUCTURE RESTORED */}
         <div className={styles.contentBodyWrapper}>
 
           {activeTab === "Overview" && (
             <>
               {/* Desktop view Grid */}
-              <div className={styles.cardsLayoutGrid}>
+              <motion.div
+                className={styles.cardsLayoutGrid}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
                 {content.cards.map((card, idx) => (
-                  <div key={idx} className={styles.metricCard}>
+                  <motion.div
+                    key={idx}
+                    className={styles.metricCard}
+                    variants={enterpriseRevealVariants}
+                    whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                  >
                     <span className={styles.cardExchangeLabel}>{card.label}</span>
                     <span className={styles.cardBseHeading}>{card.mainValue}</span>
                     <span className={styles.cardBombaySubtext}>{card.subValue}</span>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Mobile Native Swipeable Metrics View */}
               <div className={styles.mobileCardsSlider}>
@@ -182,11 +250,23 @@ export default function InvestorRelations() {
               </div>
 
               {/* Why Invest Feature Blocks */}
-              <div className={styles.whyInvestBlock}>
-                <h3 className={styles.whyInvestTitle}>{content.whyInvestTitle}</h3>
+              <motion.div
+                className={styles.whyInvestBlock}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.h3 className={styles.whyInvestTitle} variants={enterpriseRevealVariants}>
+                  {content.whyInvestTitle}
+                </motion.h3>
                 <div className={styles.highlightsGridDisplay}>
                   {content.highlights.map((highlight, index) => (
-                    <div key={index} className={styles.highlightRowItem}>
+                    <motion.div
+                      key={index}
+                      className={styles.highlightRowItem}
+                      variants={enterpriseRevealVariants}
+                      whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                    >
                       <div className={styles.checkboxContainerSquare}>
                         <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 5L4.5 8.5L11 1.5" stroke="#06257E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -196,18 +276,28 @@ export default function InvestorRelations() {
                         <h4 className={styles.highlightHeadingTitle}>{highlight.title}</h4>
                         <p className={styles.highlightParagraphDesc}>{highlight.subtitle}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </>
           )}
 
           {activeTab === "Financial" && (
-            <div className={styles.documentSection}>
+            <motion.div
+              className={styles.documentSection}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <h3 className={styles.documentTitle}>Financial Information</h3>
               {financialDocuments.map((item) => (
-                <button className={styles.documentRow} key={item}>
+                <motion.button
+                  className={styles.documentRow}
+                  key={item}
+                  variants={enterpriseRevealVariants}
+                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                >
                   <span>{item}</span>
                   <Image
                     src="/icons/Arrow.png"
@@ -216,16 +306,26 @@ export default function InvestorRelations() {
                     height={24}
                     className={styles.arrowIcon}
                   />
-                </button>
+                </motion.button>
               ))}
-            </div>
+            </motion.div>
           )}
 
           {activeTab === "Governance" && (
-            <div className={styles.documentSection}>
+            <motion.div
+              className={styles.documentSection}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <h3 className={styles.documentTitle}>Corporate Governance</h3>
               {governanceDocuments.map((item) => (
-                <button className={styles.documentRow} key={item}>
+                <motion.button
+                  className={styles.documentRow}
+                  key={item}
+                  variants={enterpriseRevealVariants}
+                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                >
                   <span>{item}</span>
                   <Image
                     src="/icons/Arrow.png"
@@ -234,23 +334,40 @@ export default function InvestorRelations() {
                     height={24}
                     className={styles.arrowIcon}
                   />
-                </button>
+                </motion.button>
               ))}
-            </div>
+            </motion.div>
           )}
 
           {activeTab === "News" && (
-            <div className={styles.newsSection}>
+            <motion.div
+              className={styles.newsSection}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <h2 className={styles.newsHeading}>Latest Announcements</h2>
               {newsItems.map((news, index) => (
-                <div className={styles.newsCard} key={index}>
+                <motion.div
+                  className={styles.newsCard}
+                  key={index}
+                  variants={enterpriseRevealVariants}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                >
                   <p className={styles.newsDate}>{news.date}</p>
                   <h3 className={styles.newsTitle}>{news.title}</h3>
                   <p className={styles.newsDescription}>{news.description}</p>
-                </div>
+                </motion.div>
               ))}
-              <button className={styles.allAnnouncementsBtn}>All Announcements</button>
-            </div>
+              <motion.button
+                className={styles.allAnnouncementsBtn}
+                variants={enterpriseRevealVariants}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                All Announcements
+              </motion.button>
+            </motion.div>
           )}
 
         </div>

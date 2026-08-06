@@ -22,6 +22,7 @@
 
 /* RED TAG "QUARTERLY RESULTS" */
 .redTag {
+  font-family: 'Inter Bold';
   color: #FF0000;
   font-weight: 700;
   font-size: 14px;
@@ -33,6 +34,7 @@
 
 /* Title Header */
 .title {
+  font-family: 'Inter Medium';
   color: #101828;
   font-weight: 500;
   font-size: 48px;
@@ -42,6 +44,7 @@
 
 /* Subtext description styling */
 .description {
+  font-family: 'Inter Regular';
   color: #4A5565;
   font-weight: 400;
   font-size: 20px;
@@ -65,6 +68,7 @@
 
 /* Header Columns Text Parameters */
 .th {
+  font-family: 'Inter Bold';
   color: #6A7282;
   font-weight: 700;
   font-size: 14px;
@@ -95,14 +99,16 @@
 
 /* Column Specific Text Classes */
 .periodText {
+  font-family: 'Inter Semi Bold';
   color: #101828;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 18px;
   line-height: 100%;
   margin: 0;
 }
 
 .typeText {
+  font-family: 'Inter Regular';
   color: #4A5565;
   font-weight: 400;
   font-size: 16px;
@@ -111,6 +117,7 @@
 }
 
 .dateText {
+  font-family: 'Inter Regular';
   color: #4A5565;
   font-weight: 400;
   font-size: 16px;
@@ -134,7 +141,7 @@
   border-radius: 4px;
   background: #0596691A;
   color: #059669;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Semi Bold';
   font-weight: 600;
   font-size: 13px;
   line-height: 100%;

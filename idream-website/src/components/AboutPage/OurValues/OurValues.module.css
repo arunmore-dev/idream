@@ -101,6 +101,7 @@
   
   .cardTitle {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Medium', Medium;
     font-weight: 500;
     font-size: 32px;
     line-height: 100%;
@@ -109,6 +110,7 @@
   
   .cardDesc {
     font-family: 'Inter', sans-serif;
+    font-family: 'Inter Regular';
     font-weight: 400;
     font-size: 18px;
     line-height: 1.4;

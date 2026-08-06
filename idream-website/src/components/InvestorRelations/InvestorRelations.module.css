@@ -26,6 +26,7 @@
 }
 
 .subTitleText {
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
@@ -35,6 +36,7 @@
 }
 
 .mainTitleText {
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 48px;
   line-height: 56px;
@@ -52,6 +54,7 @@
 }
 
 .descriptionText {
+  font-family: 'Inter Regular';
   max-width: 655px;
   width: 100%;
   font-weight: 400;
@@ -86,8 +89,9 @@
   border: none;
   background: transparent;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 18.67px;
   color: rgba(10, 10, 10, 0.6);
   cursor: pointer;
   border-radius: 12px;
@@ -137,6 +141,7 @@
 }
 
 .cardExchangeLabel {
+  font-family: 'Inter Bold', Bold;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
@@ -147,14 +152,16 @@
 }
 
 .cardBseHeading {
+  font-family: 'Inter Semi Bold', Bold;
   font-weight: 600;
-  font-size: 44px;
+  font-size: 36px;
   line-height: 48px;
   color: rgba(16, 24, 40, 1);
   margin-bottom: 16px;
 }
 
 .cardBombaySubtext {
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -174,8 +181,9 @@
 }
 
 .whyInvestTitle {
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 40px;
   color: rgba(16, 24, 40, 1);
   margin: 0 0 40px 0;

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { motion, Variants } from "framer-motion";
 import styles from "./Contact.module.css";
 
 const contactInfo = [
@@ -45,6 +46,30 @@ const socialLinks = [
   { label: "YouTube", icon: "/icons/youtube.png" },
 ];
 
+// Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -56,7 +81,7 @@ export default function Contact() {
   };
 
   const validatePhone = (phone: string) => {
-    if (!phone) return true; // Optional field, but if provided must be valid
+    if (!phone) return true; // Optional field
     return /^\+?[0-9\s-]{7,15}$/.test(phone);
   };
 
@@ -127,18 +152,36 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.topTag}>CONTACT US</span>
-          <h2 className={styles.heading}>Get In Touch</h2>
-          <div className={styles.gradientLineTracker}></div>
-          <p className={styles.subHeading}>
+        {/* Header Animation */}
+        <motion.div
+          className={styles.header}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <motion.span className={styles.topTag} variants={fadeUpVariants}>
+            CONTACT US
+          </motion.span>
+          <motion.h2 className={styles.heading} variants={fadeUpVariants}>
+            Get In Touch
+          </motion.h2>
+          <motion.div className={styles.gradientLineTracker} variants={fadeUpVariants} />
+          <motion.p className={styles.subHeading} variants={fadeUpVariants}>
             We&apos;d love to hear from you. Reach out for partnerships, inquiries, or more information.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className={styles.grid}>
-          {/* Left Column: Form Card */}
-          <form className={styles.formCard} onSubmit={handleSubmit}>
+          {/* Left Column: Animated Form Card */}
+          <motion.form
+            className={styles.formCard}
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
             <h3 className={styles.formTitle}>Send Us a Message</h3>
             
             <div className={styles.field}>
@@ -201,15 +244,32 @@ export default function Contact() {
               </p>
             )}
 
-            <button type="submit" className={styles.submitBtn} disabled={loading}>
+            <motion.button
+              type="submit"
+              className={styles.submitBtn}
+              disabled={loading}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
               {loading ? "Sending..." : submitted ? "Message Sent!" : "Send Message"}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
 
-          {/* Right Column: Info Deck */}
-          <div className={styles.infoCol}>
+          {/* Right Column: Info Deck Animation */}
+          <motion.div
+            className={styles.infoCol}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
             {contactInfo.map((info, idx) => (
-              <div key={idx} className={styles.infoCard}>
+              <motion.div
+                key={idx}
+                className={styles.infoCard}
+                variants={fadeUpVariants}
+              >
                 <div className={styles.iconContainer}>
                   <img src={info.icon} alt={info.title} className={styles.infoIcon} />
                 </div>
@@ -219,26 +279,29 @@ export default function Contact() {
                     <p key={lIdx} className={styles.infoDetail}>{line}</p>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             {/* Social Media Card */}
-            <div className={styles.socialCard}>
+            <motion.div className={styles.socialCard} variants={fadeUpVariants}>
               <h4 className={styles.socialTitle}>Connect With Us</h4>
               <div className={styles.socialIconsRow}>
                 {socialLinks.map((social, idx) => (
-                  <a
+                  <motion.a
                     key={idx}
                     href="#"
                     className={styles.socialIconCircle}
                     aria-label={social.label}
+                    whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     <img src={social.icon} alt={social.label} className={styles.innerIcon} />
-                  </a>
+                  </motion.a>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

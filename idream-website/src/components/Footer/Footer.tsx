@@ -1,16 +1,51 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 import styles from "./Footer.module.css";
+
+// Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
+      <motion.div
+        className={styles.container}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+      >
         {/* TOP SECTION */}
         <div className={styles.top}>
           {/* Brand Info */}
-          <div className={styles.brand}>
-            {/* CHANGED: href="#home" -> href="/" to redirect to root/landing page */}
+          <motion.div className={styles.brand} variants={fadeUpVariants}>
             <Link href="/" className={styles.logoWrapper}>
               <Image 
                 src="/images/Flogo.png" 
@@ -24,35 +59,53 @@ export default function Footer() {
             <p className={styles.description}>
               Leading the transformation of entertainment infrastructure since 1981.
             </p>
-          </div>
+          </motion.div>
 
           {/* Links Grid Sections */}
           <div className={styles.linksGrid}>
             {/* Column 1: Quick Links */}
-            <div className={styles.linkColumn}>
+            <motion.div className={styles.linkColumn} variants={fadeUpVariants}>
               <h4 className={styles.columnTitle}>Quick Links</h4>
               <ul className={styles.linkList}>
-                <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
-                <li><Link href="#business-segments" className={styles.footerLink}>Business Segments</Link></li>
-                <li><Link href="#strategy" className={styles.footerLink}>Strategy</Link></li>
-                <li><Link href="/management" className={styles.footerLink}>Management</Link></li>
-                <li><Link href="/investors" className={styles.footerLink}>Investor Relations</Link></li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="/about" className={styles.footerLink}>About Us</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#business-segments" className={styles.footerLink}>Business Segments</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#strategy" className={styles.footerLink}>Strategy</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="/management" className={styles.footerLink}>Management</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="/investors" className={styles.footerLink}>Investor Relations</Link>
+                </motion.li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Column 2: For Investors */}
-            <div className={styles.linkColumn}>
+            <motion.div className={styles.linkColumn} variants={fadeUpVariants}>
               <h4 className={styles.columnTitle}>For Investors</h4>
               <ul className={styles.linkList}>
-                <li><Link href="#financial-reports" className={styles.footerLink}>Financial Reports</Link></li>
-                <li><Link href="#stock-information" className={styles.footerLink}>Stock Information</Link></li>
-                <li><Link href="#corporate-governance" className={styles.footerLink}>Corporate Governance</Link></li>
-                <li><Link href="#announcements" className={styles.footerLink}>Announcements</Link></li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#financial-reports" className={styles.footerLink}>Financial Reports</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#stock-information" className={styles.footerLink}>Stock Information</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#corporate-governance" className={styles.footerLink}>Corporate Governance</Link>
+                </motion.li>
+                <motion.li whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                  <Link href="#announcements" className={styles.footerLink}>Announcements</Link>
+                </motion.li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Column 3: Contact */} 
-            <div className={styles.contactColumn}>
+            <motion.div className={styles.contactColumn} variants={fadeUpVariants}>
               <h4 className={styles.columnTitle}>Contact</h4>
               <ul className={styles.contactList}>
                 <li className={styles.contactItem}>
@@ -68,12 +121,12 @@ export default function Footer() {
                   <a href="tel:+9122XXXXXXXX" className={styles.footerLink}>+91 (22) XXXX XXXX</a>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         {/* BOTTOM SECTION */}
-        <div className={styles.bottom}>
+        <motion.div className={styles.bottom} variants={fadeUpVariants}>
           <div className={styles.bottomRow}>
             <p className={styles.copyright}>
               &copy; 2026 IDream Film Infrastructure Company Limited. All rights reserved.
@@ -87,8 +140,8 @@ export default function Footer() {
           <p className={styles.bseInfo}>
             BSE Listed Company | Incorporated in 1981 | CIN: LXXXXX MH 1981 PLC XXXXXX
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }

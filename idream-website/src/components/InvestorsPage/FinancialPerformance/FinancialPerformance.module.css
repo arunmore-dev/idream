@@ -24,6 +24,7 @@
   
   /* RED TAG "FINANCIALS" */
   .redTag {
+    font-family: 'Inter Bold';
     color: #FF0000;
     font-weight: 700;
     font-size: 14px;
@@ -35,6 +36,7 @@
   
   /* "Financial Performance" Title */
   .title {
+    font-family: 'Inter Medium';
     color: #101828;
     font-weight: 500;
     font-size: 48px;
@@ -44,6 +46,7 @@
   
   /* Sub-description paragraph */
   .description {
+    font-family: 'Inter Regular';
     color: #4A5565;
     font-weight: 400;
     font-size: 20px;
@@ -78,6 +81,7 @@
   
   /* Big Figure text: e.g. "₹480 Cr" */
   .cardMetric {
+    font-family: 'Inter Bold';
     color: #101828;
     font-weight: 700;
     font-size: 48px;
@@ -87,6 +91,7 @@
   
   /* Metric Label: e.g. "Total Revenue FY2025" */
   .cardLabel {
+    font-family: 'Inter Semi Bold';
     color: #6A7282;
     font-weight: 600;
     font-size: 18px;
@@ -98,6 +103,7 @@
   
   /* Trend element wrapper */
   .trend {
+    font-family: 'Inter Semi Bold';
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;

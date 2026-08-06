@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, Variants } from "framer-motion";
 import styles from "./BusinessSegments.module.css";
 
 const segments = [
@@ -29,19 +32,75 @@ const segments = [
   },
 ];
 
+// Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+const cardGridVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 export default function BusinessSegments() {
   return (
     <section id="services" className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Our Business Segments</h2>
-        <div className={styles.underline} />
-        <p className={styles.subHeading}>
-          Comprehensive solutions across the entertainment value chain
-        </p>
+        {/* Header Section Animation */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <motion.h2 className={styles.heading} variants={fadeUpVariants}>
+            Our Business Segments
+          </motion.h2>
+          <motion.div className={styles.underline} variants={fadeUpVariants} />
+          <motion.p className={styles.subHeading} variants={fadeUpVariants}>
+            Comprehensive solutions across the entertainment value chain
+          </motion.p>
+        </motion.div>
 
-        <div className={styles.grid}>
+        {/* Business Cards Grid */}
+        <motion.div
+          className={styles.grid}
+          variants={cardGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
           {segments.map((segment) => (
-            <div key={segment.title} className={styles.card}>
+            <motion.div
+              key={segment.title}
+              className={styles.card}
+              variants={fadeUpVariants}
+            >
               <div className={styles.imageWrap}>
                 <Image
                   src={segment.image}
@@ -77,15 +136,22 @@ export default function BusinessSegments() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className={styles.ctaWrap}>
+        {/* CTA Button Animation */}
+        <motion.div
+          className={styles.ctaWrap}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <Link href="#contact" className={styles.ctaButton}>
             Learn More
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

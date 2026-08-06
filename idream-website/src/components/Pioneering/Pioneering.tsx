@@ -1,7 +1,32 @@
 "use client";
 
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 import styles from "./Pioneering.module.css";
+
+// Animation Variants Definition
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
 
 export default function Pioneering() {
   return (
@@ -9,27 +34,41 @@ export default function Pioneering() {
       <div className={styles.container}>
 
         {/* Top Intro Section */}
-        <div className={styles.intro}>
+        <motion.div
+          className={styles.intro}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
           <div className={styles.introLeft}>
-            <span className={styles.eyebrow}>About Us</span>
-            <h2 className={styles.heading}>
+            <motion.span className={styles.eyebrow} variants={fadeUpVariants}>
+              About Us
+            </motion.span>
+            <motion.h2 className={styles.heading} variants={fadeUpVariants}>
               Pioneering the Future of Entertainment Infrastructure
-            </h2>
+            </motion.h2>
           </div>
           <div className={styles.introRight}>
-            <p className={styles.description}>
+            <motion.p className={styles.description} variants={fadeUpVariants}>
               IDream Film Infrastructure Company Limited provides world-class
               facilities and innovative solutions for the global film, media, and
               entertainment industry. We bridge the gap between creative vision
               and technical excellence.
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
-        {/* 1. DESKTOP VIEW: Shows full grid side-by-side */}
-        <div className={styles.grid}>
+        {/* 1. DESKTOP VIEW: Shows full grid side-by-side with staggered reveals */}
+        <motion.div
+          className={styles.grid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
           {/* COLUMN 1 */}
-          <div className={styles.column}>
+          <motion.div className={styles.column} variants={fadeUpVariants}>
             <div className={styles.textCard}>
               <div>
                 <span className={styles.cardLabel}>Who We Are</span>
@@ -47,10 +86,10 @@ export default function Pioneering() {
                 sizes="33vw"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* COLUMN 2 */}
-          <div className={styles.cardCenter}>
+          <motion.div className={styles.cardCenter} variants={fadeUpVariants}>
             <Image
               src="/images/about-filmset.jpg"
               alt="Film production set"
@@ -71,10 +110,10 @@ export default function Pioneering() {
                 </svg>
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* COLUMN 3 */}
-          <div className={styles.column}>
+          <motion.div className={styles.column} variants={fadeUpVariants}>
             <div className={styles.textCard}>
               <div className={styles.reportHeader}>
                 <span className={styles.cardLabel}>Report</span>
@@ -97,11 +136,17 @@ export default function Pioneering() {
                 sizes="33vw"
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* 2. MOBILE & TABLET SWIPABLE VIEW */}
-        <div className={styles.carouselViewport}>
+        <motion.div
+          className={styles.carouselViewport}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
           <div className={styles.carouselTrack}>
             {/* SLIDE 1: Who We Are */}
             <div className={styles.slideItem}>
@@ -178,7 +223,7 @@ export default function Pioneering() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

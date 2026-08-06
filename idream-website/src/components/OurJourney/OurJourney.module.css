@@ -24,6 +24,7 @@
 
 .heading {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 36px;
   line-height: 36px;
@@ -75,6 +76,7 @@
 
 .year {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular', Regular;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -86,6 +88,7 @@
 
 .label {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular', Regular;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -138,6 +141,7 @@
 
 .cardTitle {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
@@ -148,6 +152,7 @@
 
 .cardText {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular', Regular;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

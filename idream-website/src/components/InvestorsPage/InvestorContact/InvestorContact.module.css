@@ -24,6 +24,7 @@
   
   /* RED TAG "CONTACT" */
   .redTag {
+    font-family: 'Inter Bold';
     color: #FF0000;
     font-weight: 700;
     font-size: 14px;
@@ -35,6 +36,7 @@
   
   /* Header Title "Investor Contact" */
   .title {
+    font-family: 'Inter Medium';
     color: #FFFFFF;
     font-weight: 500;
     font-size: 48px;
@@ -67,6 +69,7 @@
   
   /* Red Bold Header tags inside the cards */
   .cardRoleTag {
+    font-family: 'Inter Bold';
     color: #FF0000;
     font-weight: 700;
     font-size: 24px;
@@ -76,6 +79,7 @@
   
   /* Main Name Heading Element (32px from Figma specs) */
   .nameHeading {
+    font-family: 'Inter Semi Bold';
     color: #FFFFFF;
     font-weight: 600;
     font-size: 32px;
@@ -85,6 +89,7 @@
   
   /* Role details descriptor text */
   .roleDetail {
+    font-family: 'Inter Regular';
     color: #D0D5DD;
     font-weight: 400;
     font-size: 18px;
@@ -117,6 +122,7 @@
   
   /* Info link styles */
   .infoLink {
+    font-family: 'Inter Regular';
     color: #FFFFFF;
     font-weight: 400;
     font-size: 18px;
@@ -131,6 +137,7 @@
   
   /* Plain info text style (non-links) */
   .infoText {
+    font-family: 'Inter Regular';
     color: #FFFFFF;
     font-weight: 400;
     font-size: 18px;

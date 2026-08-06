@@ -27,7 +27,8 @@
 }
 
 .topTag {
-  font-size: 18px;
+  font-family: 'Inter Regular';
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 3px;
   color: #4a5565;
@@ -35,7 +36,8 @@
 }
 
 .heading {
-  font-size: 58px;
+  font-family: 'Inter Medium', Medium;
+  font-size: 48px;
   font-weight: 500;
   line-height: 1.1;
   color: #101828;
@@ -56,9 +58,10 @@
 }
 
 .subHeading {
+  font-family: 'Inter Regular';
   max-width: 720px;
   width: 100%;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
   color: #4a5565;
@@ -91,6 +94,7 @@
 }
 
 .formTitle {
+  font-family: 'Inter Medium', Medium;
   font-size: 32px;
   font-weight: 500;
   line-height: 36px;
@@ -107,7 +111,8 @@
 }
 
 .field label {
-  font-size: 18px;
+  font-family: 'Inter Medium', Medium;
+  font-size: 20px;
   font-weight: 500;
   line-height: 22px;
   color: rgba(54, 65, 83, 1);
@@ -124,6 +129,7 @@
   color: #101828;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   box-shadow:
     -0.5px -0.5px 0px rgba(0,0,0,0.10),
     2.5px 2.5px 3px -2.5px rgba(0,0,0,0.15),
@@ -156,7 +162,8 @@
   background: rgba(189, 30, 30, 1);
   border-radius: 8px;
   border: none;
-  font-size: 18px;
+  font-family: 'Inter Medium', Medium;
+  font-size: 20px;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
@@ -223,6 +230,7 @@
 }
 
 .infoTitle {
+  font-family: 'Inter Medium', Medium;
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
@@ -231,6 +239,7 @@
 }
 
 .infoDetail {
+  font-family: 'Inter Regular';
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
@@ -253,7 +262,7 @@
   gap: 24px;
 }
 
-.socialTitle {
+.socialTitle {  font-family: 'Inter Medium', Medium;
   font-size: 20px;
   font-weight: 500;
   line-height: 28px;

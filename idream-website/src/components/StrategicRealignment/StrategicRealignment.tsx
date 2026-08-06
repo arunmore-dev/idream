@@ -3,6 +3,7 @@
 import styles from "./StrategicRealignment.module.css";
 import StrategicPillars from "../StrategicPillars/StrategicPillars";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 const focusItems = [
   {
@@ -27,24 +28,65 @@ const focusItems = [
   },
 ];
 
+// Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
 export default function StrategicRealignment() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Header Block */}
-        <div className={styles.headerBlock}>
-          <h1 className={styles.mainHeading}>Strategic Realignment</h1>
-          <div className={styles.gradientLine}></div>
-          <p className={styles.subHeading}>
+        {/* Header Block Animation */}
+        <motion.div
+          className={styles.headerBlock}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <motion.h1 className={styles.mainHeading} variants={fadeUpVariants}>
+            Strategic Realignment
+          </motion.h1>
+          <motion.div className={styles.gradientLine} variants={fadeUpVariants} />
+          <motion.p className={styles.subHeading} variants={fadeUpVariants}>
             Transforming our business to unlock long-term stakeholder value
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Content Row Split */}
         <div className={styles.grid}>
-          <div className={styles.leftCol}>
-            <h2 className={styles.heading}>Sharpening Our Business Focus</h2>
-            <div className={styles.textGroup}>
+          {/* Left Column Animation */}
+          <motion.div
+            className={styles.leftCol}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <motion.h2 className={styles.heading} variants={fadeUpVariants}>
+              Sharpening Our Business Focus
+            </motion.h2>
+            <motion.div className={styles.textGroup} variants={fadeUpVariants}>
               <p className={styles.text}>
                 IDream is currently undertaking a comprehensive strategic realignment
                 initiative aimed at sharpening our business focus and positioning the
@@ -55,26 +97,33 @@ export default function StrategicRealignment() {
                 exceptional value for all stakeholders while maintaining our leadership
                 position in the film and entertainment infrastructure sector.
               </p>
-            </div>
-            <div className={styles.quoteBox}>
+            </motion.div>
+            <motion.div className={styles.quoteBox} variants={fadeUpVariants}>
               <p>
                 &ldquo;Our strategic realignment is not just about adaptation—it&apos;s
                 about leading the transformation of entertainment infrastructure for the
                 digital age.&rdquo;
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Column Layout */}
+          {/* Right Column Layout Animation */}
           <div className={styles.rightCol}>
             {/* Desktop View List Container */}
-            <div className={styles.desktopList}>
+            <motion.div
+              className={styles.desktopList}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+            >
               {focusItems.map((item, index) => (
-                <div
+                <motion.div
                   key={`desktop-${item.title}`}
                   className={`${styles.item} ${
                     index % 2 === 0 ? styles.itemBlue : styles.itemPink
                   }`}
+                  variants={fadeUpVariants}
                 >
                   <div className={styles.itemIconWrap}>
                     <Image
@@ -89,12 +138,18 @@ export default function StrategicRealignment() {
                     <h3 className={styles.itemTitle}>{item.title}</h3>
                     <p className={styles.itemText}>{item.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Mobile Native Swiper Container */}
-            <div className={styles.mobileSliderWrapper}>
+            <motion.div
+              className={styles.mobileSliderWrapper}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: false, amount: 0.2 }}
+            >
               <div className={styles.sliderClip}>
                 <div className={styles.sliderTrack}>
                   {focusItems.map((item, index) => (
@@ -121,7 +176,7 @@ export default function StrategicRealignment() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

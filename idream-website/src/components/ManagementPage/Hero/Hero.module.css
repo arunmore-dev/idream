@@ -20,7 +20,7 @@
 }
 
 .tagline {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Bold';
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
@@ -30,7 +30,7 @@
 }
 
 .heading {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Bold';
   font-weight: 700;
   font-size: 72px;
   line-height: 1.1;
@@ -40,7 +40,7 @@
 }
 
 .description {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 24px;
   line-height: 1.4;
@@ -91,7 +91,7 @@
 }
 
 .statValue {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Bold';
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
@@ -100,7 +100,7 @@
 }
 
 .statLabel {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter Semi Bold';
   font-weight: 600;
   font-size: 14px;
   line-height: 100%;

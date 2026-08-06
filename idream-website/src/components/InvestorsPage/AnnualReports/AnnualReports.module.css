@@ -19,6 +19,7 @@
 }
 
 .redTag {
+  font-family: 'Inter Bold';
   font-size: 14px;
   font-weight: 700;
   line-height: 100%;
@@ -28,7 +29,8 @@
 }
 
 .title {
-  font-size: 58px;
+  font-family: 'Inter Medium';
+  font-size: 48px;
   font-weight: 500;
   line-height: 100%;
   color: #101828;
@@ -36,6 +38,7 @@
 }
 
 .description {
+  font-family: 'Inter Regular';
   font-size: 20px;
   font-weight: 400;
   line-height: 150%;
@@ -73,6 +76,7 @@
 }
 
 .yearTag{
+  font-family: 'Inter Bold';
   font-size:14px;
   font-weight:700;
   color:#FF0000;
@@ -84,6 +88,7 @@
 }
 
 .reportName{
+  font-family: 'Inter Semi Bold';
   margin:0;
   font-size:24px;
   font-weight:600;
@@ -92,6 +97,8 @@
 }
 
 .fileMeta{
+  font-family: 'Inter Regular';
+  font-weight:400;
   margin-top:10px;
   color:#4A5565;
   font-size:16px;
@@ -152,7 +159,8 @@
 
 .downloadText{
 
-  font-family:"Inter",sans-serif;
+  font-family: 'Inter Semi Bold';
+
 
   font-weight:600;
 

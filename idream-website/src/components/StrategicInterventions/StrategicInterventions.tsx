@@ -1,8 +1,11 @@
+"use client";
+
+import { motion, Variants, Easing } from "framer-motion";
 import styles from "./StrategicInterventions.module.css";
 
 const interventions = [
   {
-    icon: "/icons/focus.png", 
+    icon: "/icons/focus.png",
     title: "Focus Areas",
     description:
       "Concentrating on high-growth segments with strong market potential and competitive advantages.",
@@ -27,36 +30,103 @@ const interventions = [
   },
 ];
 
+// Added 'as const' to fix the TypeScript tuple type error
+const enterpriseEasing: Easing = [0.16, 1, 0.3, 1];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: enterpriseEasing,
+    },
+  },
+};
+
+// Preserves the 45-degree diamond rotation without type errors
+const badgeVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.8, rotate: 45 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 45,
+    transition: {
+      duration: 0.6,
+      ease: enterpriseEasing,
+    },
+  },
+};
+
 export default function StrategicInterventions() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Top Meta Tag */}
-        <span className={styles.subheading}>Our Philosophy</span>
+        {/* Header Block Animation */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          {/* Top Meta Tag */}
+          <motion.span className={styles.subheading} variants={fadeUpVariants}>
+            Our Philosophy
+          </motion.span>
 
-        {/* Title and Accent Rule Wrapper */}
-        <div className={styles.headerWrapper}>
-          <h2 className={styles.heading}>
-            Strategic Interventions that <br /> Unlock Long-Term Value
-          </h2>
-          <div className={styles.accentLine}></div>
-        </div>
+          {/* Title and Accent Rule Wrapper */}
+          <div className={styles.headerWrapper}>
+            <motion.h2 className={styles.heading} variants={fadeUpVariants}>
+              Strategic Interventions that <br /> Unlock Long-Term Value
+            </motion.h2>
+            <motion.div className={styles.accentLine} variants={fadeUpVariants} />
+          </div>
+        </motion.div>
 
-        {/* Column Grid Grid Wrapper */}
-        <div className={styles.grid}>
+        {/* Column Grid Wrapper */}
+        <motion.div
+          className={styles.grid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+        >
           {interventions.map((item) => (
-            <div key={item.title} className={styles.card}>
+            <motion.div
+              key={item.title}
+              className={styles.card}
+              variants={fadeUpVariants}
+              whileHover={{ y: -6, transition: { duration: 0.25, ease: enterpriseEasing } }}
+            >
               <div className={styles.iconWrapper}>
                 <img src={item.icon} alt={item.title} className={styles.icon} />
               </div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardText}>{item.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Bottom Decorative Diamond (Rotated Square) */}
-        <div className={styles.diamondBadge}></div>
+        {/* Bottom Decorative Diamond with explicit 45 deg rotation */}
+        <motion.div
+          className={styles.diamondBadge}
+          variants={badgeVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+        />
       </div>
     </section>
   );

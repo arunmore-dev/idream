@@ -23,6 +23,7 @@
   
   /* RED TAG "SHAREHOLDING" */
   .redTag {
+    font-family: 'Inter Bold';
     color: #FF0000;
     font-weight: 700;
     font-size: 14px;
@@ -34,6 +35,7 @@
   
   /* Header Title "Shareholding Pattern" */
   .title {
+    font-family: 'Inter Medium';
     color: #101828;
     font-weight: 500;
     font-size: 48px;
@@ -43,6 +45,7 @@
   
   /* Ownership description subtitle text */
   .description {
+    font-family: 'Inter Regular';
     color: #4A5565;
     font-weight: 400;
     font-size: 20px;
@@ -82,6 +85,7 @@
   }
   
   .centerNumber {
+    font-family: 'Inter Bold';
     color: #101828;
     font-weight: 700;
     font-size: 32px; /* From image 4 layout measurements */
@@ -135,6 +139,7 @@
   
   /* Segment text tags values */
   .rowTitle {
+    font-family: 'Inter Medium';
     color: #101828;
     font-weight: 500;
     font-size: 18px;
@@ -144,6 +149,7 @@
   
   /* Percentage numerical readouts */
   .rowPercentage {
+    font-family: 'Inter Bold';
     color: #101828;
     font-weight: 700;
     font-size: 24px;
@@ -176,7 +182,7 @@
   
   .downloadText {
     color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter Semi Bold';
     font-weight: 600;
     font-size: 14px;
     line-height: 100%;

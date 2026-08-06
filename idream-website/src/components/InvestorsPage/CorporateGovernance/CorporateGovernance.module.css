@@ -23,6 +23,7 @@
   
   /* RED TAG "GOVERNANCE" */
   .redTag {
+    font-family: 'Inter Bold';
     color: #FF0000;
     font-weight: 700;
     font-size: 14px;
@@ -34,6 +35,7 @@
   
   /* Header Title */
   .title {
+    font-family: 'Inter Medium';
     color: #FFFFFF;
     font-weight: 500;
     font-size: 48px;
@@ -43,6 +45,7 @@
   
   /* Subtext description styling */
   .description {
+    font-family: 'Inter Medium';
     color: #D0D5DD;
     font-weight: 400;
     font-size: 20px;
@@ -90,6 +93,7 @@
   
   /* Section Category Header Label */
   .cardTitle {
+    font-family: 'Inter Semi Bold';
     color: #FFFFFF;
     font-weight: 600;
     font-size: 24px;
@@ -99,6 +103,7 @@
   
   /* Stat subtitle content description metrics */
   .cardDetail {
+    font-family: 'Inter Regular';
     color: #D0D5DD; /* Light text layout color token */
     font-weight: 400;
     font-size: 18px;
@@ -116,6 +121,7 @@
     border: none;
     padding: 0;
     color: #FF0000;
+    font-family: 'Inter Semi Bold';
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;

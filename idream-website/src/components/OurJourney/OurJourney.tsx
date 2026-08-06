@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 import styles from "./OurJourney.module.css";
 
 const milestones = [
@@ -33,6 +34,41 @@ const milestones = [
   },
 ];
 
+// Animation Variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+const cardContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 export default function OurJourney() {
   return (
     <section id="journey" className={styles.section}>
@@ -40,12 +76,32 @@ export default function OurJourney() {
         
         {/* Top Journey Section */}
         <div className={styles.topJourneyWrapper}>
-          <h2 className={styles.heading}>Our Journey</h2>
+          {/* Animated Heading */}
+          <motion.h2
+            className={styles.heading}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            Our Journey
+          </motion.h2>
 
+          {/* Timeline Node Items (Staggered Fade-in) */}
           <div className={styles.timelineViewportMobile}>
-            <div className={styles.timelineRow}>
+            <motion.div
+              className={styles.timelineRow}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+            >
               {milestones.map((item) => (
-                <div key={item.label} className={styles.timelineNode}>
+                <motion.div
+                  key={item.label}
+                  className={styles.timelineNode}
+                  variants={fadeUpVariants}
+                >
                   <div className={styles.iconCircle}>
                     <Image
                       src={item.icon}
@@ -58,25 +114,32 @@ export default function OurJourney() {
 
                   <div className={styles.year}>{item.year}</div>
                   <div className={styles.label}>{item.label}</div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* Mission Vision Values Section */}
+        {/* Mission Vision Values Cards Row (Staggered Upward Reveal) */}
         <div className={styles.cardsRowViewport}>
-          <div className={styles.cardsRow}>
+          <motion.div
+            className={styles.cardsRow}
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
             {milestones.map((item) => (
-              <div
+              <motion.div
                 key={item.cardTitle}
                 className={`${styles.card} ${item.borderColorClass}`}
+                variants={fadeUpVariants}
               >
                 <h3 className={styles.cardTitle}>{item.cardTitle}</h3>
                 <p className={styles.cardText}>{item.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
       </div>

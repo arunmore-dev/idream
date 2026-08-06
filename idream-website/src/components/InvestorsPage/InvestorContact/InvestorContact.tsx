@@ -34,7 +34,7 @@ export default function InvestorContact() {
         <span className={styles.redTag}>Contact</span>
         <h2 className={styles.title}>Investor Contact</h2>
       </div>
-
+    
       {/* Grid wrapper containing contact block cards */}
       <div className={styles.gridContainer}>
         {contactData.map((item, index) => (

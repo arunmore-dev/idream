@@ -28,6 +28,7 @@
   width: 100%;
   max-width: 627px;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 48px;
   line-height: 56px;
@@ -48,6 +49,7 @@
   width: 100%;
   max-width: 627px;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
@@ -80,6 +82,7 @@
 .heading {
   width: 100%;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
@@ -99,6 +102,7 @@
 .text {
   width: 100%;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 20px;
   line-height: 29.25px;
@@ -121,6 +125,7 @@
 .quoteBox p {
   width: 100%;
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Italic',Italic;
   font-weight: 400;
   font-style: italic;
   font-size: 18px;
@@ -197,6 +202,7 @@
 
 .itemTitle {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
@@ -206,6 +212,7 @@
 
 .itemText {
   font-family: 'Inter', sans-serif;
+  font-family: 'Inter Regular';
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
