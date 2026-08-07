@@ -31,7 +31,6 @@
 
 .eyebrow {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
   font-family: 'Inter Bold', Bold;
   font-weight: 700;
   font-size: 14px;
@@ -48,7 +47,6 @@
 .heading {
   max-width: 654px;
   width: 100%;
-  font-family: 'Inter', sans-serif;
   font-family: 'Inter Medium', Medium;
   font-weight: 500;
   font-size: 48px;
