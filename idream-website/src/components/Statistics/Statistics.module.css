@@ -87,7 +87,7 @@
   .value {
     font-size: 44px;
     line-height: 1;
-    color: #2b6eff; /* Premium highlight blue specified inside reference mobile files */
+     /* Premium highlight blue specified inside reference mobile files */
   }
   .label {
     font-size: 13px;
